@@ -10,8 +10,13 @@
 -proficiency
 -
 '''
-prova=('nome','classe','razza','background.txt',tuple([rn.choice(range(15))in range(6)]))
 import random as rn
+class _class():
+    #aggiungere le altre classi poi
+    stat_initial={'fighter':{'bonus_life':10,'hit_dice':10},
+                  'rogue':{'bonus_life':8,'hit_dice':8}
+                  }
+prova=('nome','classe','razza','background.txt',tuple([rn.choice(range(15))in range(6)]))
 
 def dice(num):
     return rn.choice(range(1,num+1))
@@ -34,13 +39,9 @@ class Player(_class):
         self.saving_throws=[bonus(i) for i in choice[4]]
         return
     
-class _class():
-    #aggiungere le altre classi poi
-    stat_initial={'fighter':{'bonus_life':10,'hit_dice':10},
-                  'rogue':{'bonus_life':8,'hit_dice':8}
-                 }
     def __init__(self,choice):
         self.life_dice=self.stat_initial[choice]['bonus_life']
         self.hit_dice_size=self.stat_initial[choice]['hit_dice']
         del(self.stat_initial)
         return
+    print('aloha')
