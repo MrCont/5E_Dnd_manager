@@ -1,3 +1,5 @@
+from character_pdf_print import export_player_to_pdf
+
 def bonus(num):
     return int((num-10)/2)
 
@@ -88,6 +90,41 @@ class character_sheet():
         print(f"wis: +{self.bon_wisdom}({self.wisdom})")
         print(f"cha: +{self.bon_charisma}({self.charisma})")
         return '_'*40
+
+
+    def export_pdf(self):
+        attr_pos=(  (,,str(self.pc_name)),
+                    (,,str(self.pc_race)),
+                    (,,str(self.pc_class)),
+                    ( ,,str(self.pc_background) ),
+                    ( ,,str(self.lvl) ),
+
+                    [,,str(self.strength)],
+                    ( ,,str(self.constitution) ),
+                    [,,str(self.intelligence)],
+                    [,,str(self.wisdom)],
+                    [,,str(self.charisma)],
+
+                    [,,str(self.bon_strength)],
+                    [,,str(self.bon_constitution)],
+                    [,,str(self.bon_intelligence)],
+                    [,,str(self.bon_wisdom)],
+                    [,,str(self.bon_charisma)],
+                    
+                    [,,str()],
+                    [,,str()],
+                    [,,str()],
+                    [,,str()],
+                    [,,str()],
+                    [,,str()],
+                    [,,str()],
+                    [,,str()],
+                    [,,str()],
+                    [,,str()],
+                    [,,str()],
+                    )
+        export_player_to_pdf(attr_pos)
+        return
 
 
 def class_mod(char_sheet):
