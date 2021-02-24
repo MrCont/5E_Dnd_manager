@@ -1,5 +1,12 @@
 from character_pdf_print import export_player_to_pdf
 
+# float range() function
+def frange(start,stop,step):
+    while start>stop:
+        yield float(start)
+        start+=step
+
+
 def bonus(num):
     return int((num-10)/2)
 
@@ -93,37 +100,30 @@ class character_sheet():
 
 
     def export_pdf(self):
-        attr_pos=(  (,,str(self.pc_name)),
-                    (,,str(self.pc_race)),
-                    (,,str(self.pc_class)),
-                    ( ,,str(self.pc_background) ),
-                    ( ,,str(self.lvl) ),
-
-                    [,,str(self.strength)],
-                    ( ,,str(self.constitution) ),
-                    [,,str(self.intelligence)],
-                    [,,str(self.wisdom)],
-                    [,,str(self.charisma)],
-
-                    [,,str(self.bon_strength)],
-                    [,,str(self.bon_constitution)],
-                    [,,str(self.bon_intelligence)],
-                    [,,str(self.bon_wisdom)],
-                    [,,str(self.bon_charisma)],
-                    
-                    [,,str()],
-                    [,,str()],
-                    [,,str()],
-                    [,,str()],
-                    [,,str()],
-                    [,,str()],
-                    [,,str()],
-                    [,,str()],
-                    [,,str()],
-                    [,,str()],
-                    [,,str()],
+        #quick generator to make y pos of skills
+        y_skills=frange(463.0,463.0-13.5*18,-13.5)
+        x_skills=116
+        attr_pos=(
+                    (x_skills,next(y_skills),str(self.acrobatics)),
+                    (x_skills,next(y_skills),str(self.animal_handling)),
+                    (x_skills,next(y_skills),str(self.arcana)),
+                    (x_skills,next(y_skills),str(self.athletics)),
+                    (x_skills,next(y_skills),str(self.deception)),
+                    (x_skills,next(y_skills),str(self.history)),
+                    (x_skills,next(y_skills),str(self.insight)),
+                    (x_skills,next(y_skills),str(self.intimidation)),
+                    (x_skills,next(y_skills),str(self.investigation)),
+                    (x_skills,next(y_skills),str(self.medicine)),
+                    (x_skills,next(y_skills),str(self.nature)),
+                    (x_skills,next(y_skills),str(self.perception)),
+                    (x_skills,next(y_skills),str(self.performance)),
+                    (x_skills,next(y_skills),str(self.persuasion)),
+                    (x_skills,next(y_skills),str(self.religion)),
+                    (x_skills,next(y_skills),str(self.sleigh_of_hand)),
+                    (x_skills,next(y_skills),str(self.stealth)),
+                    (x_skills,next(y_skills),str(self.survival))
                     )
-        export_player_to_pdf(attr_pos)
+        export_player_to_pdf("character_sheet.pdf","test.pdf",attr_pos)
         return
 
 
@@ -173,6 +173,7 @@ def race_mod(char_sheet):
 scelte_base = ['gigi','high_elf','rogue','tarallo']
 array_statistiche = [8,14,13,15,12,10]
 tizio = character_sheet(scelte_base,array_statistiche)
+tizio.export_pdf()
 print("BASE")
 print(tizio)
 

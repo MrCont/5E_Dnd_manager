@@ -56,14 +56,14 @@ def export_player_to_pdf(template_pdf,output_pdf,positions):
     packet.seek(0)
     new_pdf = PdfFileReader(packet)
     # read your existing PDF
-    existing_pdf = PdfFileReader(open("character_sheet.pdf", "rb"))
+    existing_pdf = PdfFileReader(open( template_pdf , "rb"))
     output = PdfFileWriter()
     # add the "watermark" (which is the new pdf) on the existing page
     page = existing_pdf.getPage(0)
     page.mergePage(new_pdf.getPage(0))
     output.addPage(page)
     # finally, write "output" to a real file
-    outputStream = open("prova.pdf", "wb")
+    outputStream = open(output_pdf,"wb")
     output.write(outputStream)
     outputStream.close()
 
