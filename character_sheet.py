@@ -107,6 +107,14 @@ class character_sheet():
         y_skills = frange(463.0,463.0-13.5*18,-13.5)
         x_skills = 116
         attr_pos = (
+
+                    #BASIC INFO
+                    (80,720,f"{self.pc_name}"),
+                    (270,730,f"{self.pc_class}"),
+                    (320,730,f"Lvl:{self.lvl}"),
+                    (385,730,f"{self.pc_background}"),
+                    (270,705,f"{self.pc_race}"),
+
                     #SKILLS
                     (x_skills,next(y_skills),f"{self.acrobatics}"),
                     (x_skills,next(y_skills),f"{self.animal_handling}"),
