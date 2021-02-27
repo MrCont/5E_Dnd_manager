@@ -100,10 +100,14 @@ class character_sheet():
 
 
     def export_pdf(self):
-        #quick generator to make y pos of skills
-        y_skills=frange(463.0,463.0-13.5*18,-13.5)
-        x_skills=116
-        attr_pos=(
+        #quick generators to make y pos 
+        y_bon_stats = frange(595,595-6*71.5,-71.5)
+        x_stats = 50
+        y_stats = frange(620,620-6*71,-71)
+        y_skills = frange(463.0,463.0-13.5*18,-13.5)
+        x_skills = 116
+        attr_pos = (
+                    #SKILLS
                     (x_skills,next(y_skills),str(self.acrobatics)),
                     (x_skills,next(y_skills),str(self.animal_handling)),
                     (x_skills,next(y_skills),str(self.arcana)),
@@ -121,7 +125,23 @@ class character_sheet():
                     (x_skills,next(y_skills),str(self.religion)),
                     (x_skills,next(y_skills),str(self.sleigh_of_hand)),
                     (x_skills,next(y_skills),str(self.stealth)),
-                    (x_skills,next(y_skills),str(self.survival))
+                    (x_skills,next(y_skills),str(self.survival)),
+
+                    #STATS
+                    (x_stats,next(y_stats),str(self.strength)),
+                    (x_stats,next(y_stats),str(self.dexterity)),
+                    (x_stats,next(y_stats),str(self.constitution)),
+                    (x_stats,next(y_stats),str(self.intelligence)),
+                    (x_stats,next(y_stats),str(self.wisdom)),
+                    (x_stats,next(y_stats),str(self.charisma)), 
+
+                    #BONUS STATS
+                    (x_stats+2,next(y_bon_stats),str(self.bon_strength)),
+                    (x_stats+2,next(y_bon_stats),str(self.bon_dexterity)),
+                    (x_stats+2,next(y_bon_stats),str(self.bon_constitution)),
+                    (x_stats+2,next(y_bon_stats),str(self.bon_intelligence)),
+                    (x_stats+2,next(y_bon_stats),str(self.bon_wisdom)),
+                    (x_stats+2,next(y_bon_stats),str(self.bon_charisma)) 
                     )
         export_player_to_pdf("character_sheet.pdf","test.pdf",attr_pos)
         return
