@@ -90,12 +90,12 @@ class character_sheet():
         print(f"name:{self.pc_name}\t race:{self.pc_race}\t class:{self.pc_class}")
         print(f"prof_bonus:+{self.proficiency_bonus}")
         print(f"hp:{self.hp}")
-        print(f"str: +{self.bon_strength}({self.strength})")
-        print(f"dex: +{self.bon_dexterity}({self.dexterity})")
-        print(f"con: +{self.bon_constitution}({self.constitution})")
-        print(f"int: +{self.bon_intelligence}({self.intelligence})")
-        print(f"wis: +{self.bon_wisdom}({self.wisdom})")
-        print(f"cha: +{self.bon_charisma}({self.charisma})")
+        print(f"str:  {self.bon_strength:+}({self.strength})")
+        print(f"dex:  {self.bon_dexterity:+}({self.dexterity})")
+        print(f"con:  {self.bon_constitution:+}({self.constitution})")
+        print(f"int:  {self.bon_intelligence:+}({self.intelligence})")
+        print(f"wis:  {self.bon_wisdom:+}({self.wisdom})")
+        print(f"cha:  {self.bon_charisma:+}({self.charisma})")
         return '_'*40
 
 
