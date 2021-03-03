@@ -9,53 +9,74 @@
 -saving throws
 -proficiency
 '''
-from prototype import *
+import pickle
+import character_sheet as cs
 import random as rn
+
+
+def initialize_player (name):
+    while True :
+        classes = cs.classes
+        races = cs.races
+        print(f"supported CLASSES:{classes}")
+        print(f"supported RACES{races}")
+
+        choice = [input(f"enter {name} {i}:") for i in ["name",
+                                                        "race",
+                                                        "class",
+                                                        "alignment"]]
+
+        stats = [int(input(f"choose {i}:")) for i in    ["strength",
+                                                        "dexterity",
+                                                        "constitution",
+                                                        "intelligence",
+                                                        "wisdom",
+                                                        "charisma"]]
+
+
+        if (choice[1] not in races) or (choice[2] not in classes):
+            print("input error retry")
+            continue
+
+        break
+
+    return cs.character_sheet(choice,stats)
+
 #prov=('nome','classe','razza','background.txt',tuple([rn.choice(range(15))in range(6)]))
-
-
-
-def dice(num):
-    return rn.choice(range(1,num+1))
-
-
-class _class():
-    #aggiungere le altre classi poi
-    stat_initial={'fighter':{'bonus_life':10,'hit_dice':10},
-                  'rogue':{'bonus_life':8,'hit_dice':8}
-                  }
-
-    def __init__(self,choice):
-        self.life_dice=self.stat_initial[choice]['bonus_life']
-        self.hit_dice_size=self.stat_initial[choice]['hit_dice']
-        del(self.stat_initial)
-        return
-
-
-class Skill_list():
+class game():
     def __init__(self):
-        return
+        self.players = []
+        self.add_players()
+        return 
 
-class Player(_class):
+    def add_players(self):
 
-    def __init__(self,choice,id):
-        self.reset(self,choice,id)
-    
-    def bonus(self,num):
-        return int((num-10)/2)
-    
+        while True:
+            try:
+                p_num = int(input("enter player number\t"))
+                break
+            except:
+                print("not an int type, retry")
+        p_names = [input(f"enter Player{i+1} name\t") for i in range(p_num)] 
+        for player in p_names:
+            self.players.append(initialize_player(player))
+
+
     def __repr__(self):
-        return
-    
-    def reset(self,choice,id):
+        for player in self.players:
+            print(player)
+        return""
 
-        #initializing parent classes
-        super().__init__(choice[1])
 
-        
-        
-        
-        
-        return
-    
-    print('aloha')
+
+if __name__ == "__main__":
+    _ = input("init a new game? y to confirm\t")
+    curr_game=0
+    if _ == 'y': curr_game = game() 
+    print(curr_game)
+    scelte_base = ['gigi','high_elf','rogue','tarallo']
+    array_statistiche = [8,14,13,15,12,10]
+    player = cs.character_sheet(scelte_base,array_statistiche)
+    _ = input("export player to pdf? y to confirm\t")
+    if _ == 'y' : player.export_pdf()
+    print("progay")

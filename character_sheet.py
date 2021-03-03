@@ -105,7 +105,8 @@ class character_sheet():
         x_stats = 50
         y_stats = frange(620,620-6*71,-71)
         y_skills = frange(463.0,463.0-13.5*18,-13.5)
-        x_skills = 116
+        x_skills = 110
+        y_saving_throws=frange(580,580-13.5*6,-13.5)
         attr_pos = (
 
                     #BASIC INFO
@@ -115,25 +116,33 @@ class character_sheet():
                     (385,730,f"{self.pc_background}"),
                     (270,705,f"{self.pc_race}"),
 
+                    #SAVING THROWS
+                    (x_skills,next(y_saving_throws),f"{self.bon_strength:+}"),
+                    (x_skills,next(y_saving_throws),f"{self.bon_dexterity:+}"),
+                    (x_skills,next(y_saving_throws),f"{self.bon_constitution:+}"),
+                    (x_skills,next(y_saving_throws),f"{self.bon_intelligence:+}"),
+                    (x_skills,next(y_saving_throws),f"{self.bon_wisdom:+}"),
+                    (x_skills,next(y_saving_throws),f"{self.bon_charisma:+}"),
+
                     #SKILLS
-                    (x_skills,next(y_skills),f"{self.acrobatics}"),
-                    (x_skills,next(y_skills),f"{self.animal_handling}"),
-                    (x_skills,next(y_skills),f"{self.arcana}"),
-                    (x_skills,next(y_skills),f"{self.athletics}"),
-                    (x_skills,next(y_skills),f"{self.deception}"),
-                    (x_skills,next(y_skills),f"{self.history}"),
-                    (x_skills,next(y_skills),f"{self.insight}"),
-                    (x_skills,next(y_skills),f"{self.intimidation}"),
-                    (x_skills,next(y_skills),f"{self.investigation}"),
-                    (x_skills,next(y_skills),f"{self.medicine}"),
-                    (x_skills,next(y_skills),f"{self.nature}"),
-                    (x_skills,next(y_skills),f"{self.perception}"),
-                    (x_skills,next(y_skills),f"{self.performance}"),
-                    (x_skills,next(y_skills),f"{self.persuasion}"),
-                    (x_skills,next(y_skills),f"{self.religion}"),
-                    (x_skills,next(y_skills),f"{self.sleigh_of_hand}"),
-                    (x_skills,next(y_skills),f"{self.stealth}"),
-                    (x_skills,next(y_skills),f"{self.survival}"),
+                    (x_skills,next(y_skills),f"{self.acrobatics:+}"),
+                    (x_skills,next(y_skills),f"{self.animal_handling:+}"),
+                    (x_skills,next(y_skills),f"{self.arcana:+}"),
+                    (x_skills,next(y_skills),f"{self.athletics:+}"),
+                    (x_skills,next(y_skills),f"{self.deception:+}"),
+                    (x_skills,next(y_skills),f"{self.history:+}"),
+                    (x_skills,next(y_skills),f"{self.insight:+}"),
+                    (x_skills,next(y_skills),f"{self.intimidation:+}"),
+                    (x_skills,next(y_skills),f"{self.investigation:+}"),
+                    (x_skills,next(y_skills),f"{self.medicine:+}"),
+                    (x_skills,next(y_skills),f"{self.nature:+}"),
+                    (x_skills,next(y_skills),f"{self.perception:+}"),
+                    (x_skills,next(y_skills),f"{self.performance:+}"),
+                    (x_skills,next(y_skills),f"{self.persuasion:+}"),
+                    (x_skills,next(y_skills),f"{self.religion:+}"),
+                    (x_skills,next(y_skills),f"{self.sleigh_of_hand:+}"),
+                    (x_skills,next(y_skills),f"{self.stealth:+}"),
+                    (x_skills,next(y_skills),f"{self.survival:+}"),
 
                     #STATS
                     (x_stats,next(y_stats),f"{self.strength}"),
@@ -168,7 +177,7 @@ def class_mod(char_sheet):
     #FIGHTER
     if char_sheet.pc_class == 'fighter':
         char_sheet.st_strength      += char_sheet.proficiency_bonus
-        char_sheet.st.constitution  += char_sheet.proficiency_bonus
+        char_sheet.st_constitution  += char_sheet.proficiency_bonus
 
     #ROGUE
     if char_sheet.pc_class == 'rogue':
@@ -195,15 +204,18 @@ def race_mod(char_sheet):
     char_sheet.bon_wisdom           =   bonus(char_sheet.wisdom)
     char_sheet.bon_charisma         =   bonus(char_sheet.charisma)
     return
-    
+
+classes = ["fighter","rogue"]
+races = ["human","high_elf"]
     
 #playground
-scelte_base = ['gigi','high_elf','rogue','tarallo']
-array_statistiche = [8,14,13,15,12,10]
-tizio = character_sheet(scelte_base,array_statistiche)
-tizio.export_pdf()
-print("BASE")
-print(tizio)
+if __name__=="__main__":
+    scelte_base = ['gigi','high_elf','rogue','tarallo']
+    array_statistiche = [8,14,13,15,12,10]
+    tizio = character_sheet(scelte_base,array_statistiche)
+    tizio.export_pdf()
+    print("BASE")
+    print(tizio)
 
 '''
 print("BONUS RAZZA")
