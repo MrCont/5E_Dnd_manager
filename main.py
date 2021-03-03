@@ -9,8 +9,12 @@
 -saving throws
 -proficiency
 '''
+import sys
 import pickle
 import character_sheet as cs
+from tkinter import *
+
+
 
 def save_game(game):
 
@@ -85,11 +89,70 @@ class game():
         return""
 
 
+class TextOut(Text):
+
+        def write(self, s):
+            self.insert(CURRENT, s)
+
+        def flush(self):
+            pass
+    
+def new_game():
+    game_label=Toplevel()
+    game_label.configure(bg="#262626")
+
+    stdout_text = TextOut(game_label)
+    sys.stdout = stdout_text
+    stdout_text.pack(expand=True, fill=BOTH)
+    game_label.mainloop()
+    return
+
+
+def main_widget():
+
+    root = Tk()
+    root.title("5e DnD manager")
+    root.geometry('300x300')
+    root.configure(bg="#262626")
+
+    b_new_game = Button(root,
+                        text = "New Adventure",
+                        width=30,
+                        height=5,
+                        bg="#3F3F3F",
+                        command=new_game,
+                        fg="white")
+
+    b_load_game = Button(root,
+                        text = "Load Adventure",
+                        width=30,
+                        height=5,
+                        bg="#3F3F3F",
+                        fg="white")
+
+    b_delete_all = Button(root,
+                        text = "Delete all Adventures",
+                        width=30,
+                        height=5,
+                        bg="#3F3F3F",
+                        fg="white")
+
+    b_new_game.pack()
+    b_load_game.pack()
+    b_delete_all.pack()
+    root.mainloop()
+    return
 
 
 
 if __name__ == "__main__":
 
+    main_widget()
+
+
+'''
+
+    
 
     _ = input("init a new game? y to confirm\t")
     curr_game=0
@@ -101,3 +164,4 @@ if __name__ == "__main__":
     _ = input("export player to pdf? y to confirm\t")
     if _ == 'y' : player.export_pdf()
     print("progay")
+'''
