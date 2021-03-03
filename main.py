@@ -11,7 +11,20 @@
 '''
 import pickle
 import character_sheet as cs
-import random as rn
+
+def save_game(game):
+
+    fileObj = open(f"{game.n_adventure}.adv", 'wb')
+    pickle.dump(game,fileObj)
+    fileObj.close()
+    return
+
+
+def load_game(game_name):
+    game_file = open(f"{game_name}.adv", 'rb')
+    game = pickle.load(game_file)
+    game_file.close()
+    return game
 
 
 def initialize_player (name):
@@ -42,9 +55,13 @@ def initialize_player (name):
 
     return cs.character_sheet(choice,stats)
 
-#prov=('nome','classe','razza','background.txt',tuple([rn.choice(range(15))in range(6)]))
+
 class game():
+
     def __init__(self):
+
+        #initializing player list
+        self.n_adventure = input("enter adventure name")
         self.players = []
         self.add_players()
         return 
@@ -69,7 +86,11 @@ class game():
 
 
 
+
+
 if __name__ == "__main__":
+
+
     _ = input("init a new game? y to confirm\t")
     curr_game=0
     if _ == 'y': curr_game = game() 
