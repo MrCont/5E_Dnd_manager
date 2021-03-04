@@ -86,17 +86,19 @@ class character_sheet():
     
 
     def __repr__(self):
-        print("character sheet")
-        print(f"name:{self.pc_name}\t race:{self.pc_race}\t class:{self.pc_class}")
-        print(f"prof_bonus:+{self.proficiency_bonus}")
-        print(f"hp:{self.hp}")
-        print(f"str:  {self.bon_strength:+}({self.strength})")
-        print(f"dex:  {self.bon_dexterity:+}({self.dexterity})")
-        print(f"con:  {self.bon_constitution:+}({self.constitution})")
-        print(f"int:  {self.bon_intelligence:+}({self.intelligence})")
-        print(f"wis:  {self.bon_wisdom:+}({self.wisdom})")
-        print(f"cha:  {self.bon_charisma:+}({self.charisma})")
-        return '_'*40
+        return "\n".join((
+        "character sheet",
+        f"name:{self.pc_name}\t race:{self.pc_race}\t class:{self.pc_class}",
+        f"prof_bonus:+{self.proficiency_bonus}",
+        f"hp:{self.hp}",
+        f"str:  {self.bon_strength:+}({self.strength})",
+        f"dex:  {self.bon_dexterity:+}({self.dexterity})",
+        f"con:  {self.bon_constitution:+}({self.constitution})",
+        f"int:  {self.bon_intelligence:+}({self.intelligence})",
+        f"wis:  {self.bon_wisdom:+}({self.wisdom})",
+        f"cha:  {self.bon_charisma:+}({self.charisma})" 
+        ))+"\n"+"_"*40
+        
 
 
     def export_pdf(self):
@@ -160,7 +162,7 @@ class character_sheet():
                     (x_stats+1,next(y_bon_stats),f"{self.bon_wisdom:+}"),
                     (x_stats+1,next(y_bon_stats),f"{self.bon_charisma:+}") 
                     )
-        export_player_to_pdf("character_sheet.pdf","test.pdf",attr_pos)
+        export_player_to_pdf("character_sheet.pdf",f"{self.pc_name}.pdf",attr_pos)
         return
 
 

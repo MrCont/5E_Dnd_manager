@@ -12,8 +12,7 @@
 import sys
 import pickle
 import character_sheet as cs
-from tkinter import *
-
+import tkinter as tk
 
 
 def save_game(game):
@@ -59,16 +58,30 @@ def initialize_player (name):
 
     return cs.character_sheet(choice,stats)
 
+def new_game(name):
+    global curr_game 
+    curr_game = game()
+    curr_game.n_adventure = name.get()
+
+
+def GUI_add_player(choice,stats):
+    global curr_game
+    curr_game.players.append(cs.character_sheet(choice,stats))
+    return
+
 
 class game():
 
     def __init__(self):
-
-        #initializing player list
-        self.n_adventure = input("enter adventure name")
         self.players = []
-        self.add_players()
-        return 
+        self.n_adventure = ""
+
+        # initializing player list
+        # self.n_adventure = input("enter adventure name")
+        # self.players = []
+        # self.add_players()
+        return
+
 
     def add_players(self):
 
@@ -82,71 +95,257 @@ class game():
         for player in p_names:
             self.players.append(initialize_player(player))
 
+    def export_pdf(self):
+        for player in self.players:
+            player.export_pdf()
+        return
+
 
     def __repr__(self):
-        for player in self.players:
-            print(player)
-        return""
-
-
-class TextOut(Text):
-
-        def write(self, s):
-            self.insert(CURRENT, s)
-
-        def flush(self):
-            pass
-    
-def new_game():
-    game_label=Toplevel()
-    game_label.configure(bg="#262626")
-
-    stdout_text = TextOut(game_label)
-    sys.stdout = stdout_text
-    stdout_text.pack(expand=True, fill=BOTH)
-    game_label.mainloop()
-    return
+        
+        # for player in self.players:
+            # print(player)
+        return "\n\n".join((repr(player) for player in self.players))
 
 
 def main_widget():
 
-    root = Tk()
+    root = tk.Tk()
+
+    #MAIN FRAME
+    main_menu = tk.Frame(root)
+    main_menu.configure(bg="#262626")
+    b_new_game = tk.Button(main_menu,
+                        text = "NEW ADVENTURE",
+                        width= 60,
+                        height=  8,
+                        bg="#3F3F3F",
+                        command=lambda:[new_adventure_menu.pack(),
+                                        main_menu.pack_forget()],
+                        fg="white").pack()
+
+    b_load_game = tk.Button(main_menu,
+                        text = "LOAD ADVENTURE",
+                        width= 60,
+                        height=  8,
+                        bg="#3F3F3F",
+                        fg="white").pack()
+
+    b_delete_all = tk.Button(main_menu,
+                        text = "DELETE ALL ADVENTURES",
+                        width= 60,
+                        height=  8,
+                        bg="#3F3F3F",
+                        fg="white").pack()
+
+
+    # NEW ADVENTURE FRAME
+    new_adventure_menu = tk.Frame(root)
+    e_adv_name = tk.Entry(new_adventure_menu,
+                        bg="#3F3F3F",
+                        fg="white")
+    
+    b_adv_name = tk.Button(new_adventure_menu,
+                            text="NEW ADVENTURE NAME",
+                            bg="#3F3F3F",
+                            command = lambda:[new_game(e_adv_name),
+                                            game_menu.pack(),
+                                            new_adventure_menu.pack_forget()],
+                            fg="white").pack(side=tk.RIGHT)
+    e_adv_name.pack(side=tk.LEFT)
+
+
+    # GAME MENU FRAME
+    game_menu = tk.Frame(root) 
+    game_menu.configure(bg="#262626")
+
+    b_save_game = tk.Button(game_menu,
+                            text="SAVE GAME",
+                            bg="#3F3F3F",
+                            command=lambda:[save_game(curr_game)],
+                            fg="white").pack()
+    b_add_player_menu = tk.Button(game_menu,
+                            text="ADD NEW PLAYER",
+                            bg="#3F3F3F",
+                            command=lambda:[add_player_menu.pack()],
+                            fg="white").pack()
+
+    b_export_pdf = tk.Button(game_menu,
+                            text="EXPORT PDF",
+                            bg="#3F3F3F",
+                            command=lambda:[curr_game.export_pdf],
+                            fg="white").pack()
+    b_main_menu = tk.Button(game_menu,
+                            text="MAIN MENU",
+                            bg="#3F3F3F",
+                            command=lambda:[main_menu.pack(),
+                                            add_player_menu.pack_forget(),
+                                            game_menu.pack_forget()],
+                            fg="white").pack()
+
+    #ADD PLAYER MENU
+    add_player_menu = tk.Frame(root)
+    add_player_menu.configure(bg="#262626")
+    #NAME ENTRY
+    l_p_name = tk.Label(add_player_menu,
+                        text="Character name:",
+                        bg="#3F3F3F",
+                        fg="white").grid(row=0,column=0)
+
+    e_p_name = tk.Entry(add_player_menu,
+                        bg="#3F3F3F",
+                        fg="white")
+    e_p_name.grid(row=0,column=1)
+
+    #RACE ENTRY
+    l_p_race = tk.Label(add_player_menu,
+                        text="Race:",
+                        bg="#3F3F3F",
+                        fg="white").grid(row=0,column=2)
+
+    e_p_race = tk.Entry(add_player_menu,
+                        bg="#3F3F3F",
+                        fg="white")
+    e_p_race.grid(row=0,column=3)
+    #CLASS ENTRY
+    l_p_class = tk.Label(add_player_menu,
+                        text="Class:",
+                        bg="#3F3F3F",
+                        fg="white").grid(row=0,column=4)
+
+    e_p_class = tk.Entry(add_player_menu,
+                        bg="#3F3F3F",
+                        fg="white")
+    e_p_class.grid(row=0,column=5)
+    #ALIGNMENT ENTRY
+    l_p_alignment = tk.Label(add_player_menu,
+                        text="Alignment:",
+                        bg="#3F3F3F",
+                        fg="white").grid(row=0,column=6)
+
+    e_p_alignment = tk.Entry(add_player_menu,
+                        bg="#3F3F3F",
+                        fg="white")
+    e_p_alignment.grid(row=0,column=7)
+    
+    #STRENGTH ENTRY
+    l_p_strength = tk.Label(add_player_menu,
+                        text="Strength:",
+                        bg="#3F3F3F",
+                        fg="white").grid(row=1,column=0)
+
+    e_p_strength = tk.Entry(add_player_menu,
+                        bg="#3F3F3F",
+                        fg="white")
+    e_p_strength.grid(row=1,column=1)
+
+    #DEXTERITY ENTRY
+    l_p_dexterity = tk.Label(add_player_menu,
+                        text="Dexterity:",
+                        bg="#3F3F3F",
+                        fg="white").grid(row=1,column=2)
+
+    e_p_dexterity = tk.Entry(add_player_menu,
+                        bg="#3F3F3F",
+                        fg="white")
+    e_p_dexterity.grid(row=1,column=3)
+
+    #CONSTITUTION ENTRY
+    l_p_constitution = tk.Label(add_player_menu,
+                        text="Constitution:",
+                        bg="#3F3F3F",
+                        fg="white").grid(row=1,column=4)
+
+    e_p_constitution = tk.Entry(add_player_menu,
+                        bg="#3F3F3F",
+                        fg="white")
+    e_p_constitution.grid(row=1,column=5)
+
+    #INTELLIGENCE ENTRY
+    l_p_intelligence = tk.Label(add_player_menu,
+                        text="Intelligence:",
+                        bg="#3F3F3F",
+                        fg="white").grid(row=1,column=6)
+
+    e_p_intelligence = tk.Entry(add_player_menu,
+                        bg="#3F3F3F",
+                        fg="white")
+    e_p_intelligence.grid(row=1,column=7)
+
+    #WISDOM ENTRY
+    l_p_wisdom = tk.Label(add_player_menu,
+                        text="Wisdom:",
+                        bg="#3F3F3F",
+                        fg="white").grid(row=1,column=8)
+
+    e_p_wisdom = tk.Entry(add_player_menu,
+                        bg="#3F3F3F",
+                        fg="white")
+    e_p_wisdom.grid(row=1,column=9)
+
+    #CHARISMA ENTRY
+    l_p_charisma = tk.Label(add_player_menu,
+                        text="Charisma:",
+                        bg="#3F3F3F",
+                        fg="white").grid(row=1,column=10)
+
+    e_p_charisma = tk.Entry(add_player_menu,
+                        bg="#3F3F3F",
+                        fg="white")
+    e_p_charisma.grid(row=1,column=11)
+    #OTHER ADD PLAYER BUTTONS
+    b_add_player = tk.Button(add_player_menu,
+                            text="ADD PLAYER",
+                            bg="#3F3F3F",
+                            command=lambda:[GUI_add_player(
+                                                        [e_p_name.get(),
+                                                        e_p_race.get(),
+                                                        e_p_class.get(),
+                                                        e_p_alignment.get()],
+                                                        [int(e_p_strength.get()),
+                                                        int(e_p_dexterity.get()),
+                                                        int(e_p_constitution.get()),
+                                                        int(e_p_intelligence.get()),
+                                                        int(e_p_wisdom.get()),
+                                                        int(e_p_charisma.get())]),
+                                            #RESET TK-TEXT
+                                            e_p_name.delete("0",tk.END),
+                                            e_p_race.delete("0",tk.END),
+                                            e_p_class.delete("0",tk.END),
+                                            e_p_alignment.delete("0",tk.END),
+                                            e_p_strength.delete("0",tk.END),
+                                            e_p_dexterity.delete("0",tk.END),
+                                            e_p_constitution.delete("0",tk.END),
+                                            e_p_intelligence.delete("0",tk.END),
+                                            e_p_wisdom.delete("0",tk.END),
+                                            e_p_charisma.delete("0",tk.END)
+                                            ],
+                            fg="white").grid(row=0,column=12,rowspan=2)
+
+    b_add_player_menu_close = tk.Button(add_player_menu,
+                                        text="CLOSE",
+                                        width=50,
+                                        bg="#3F3F3F",
+                                        command=lambda:add_player_menu.pack_forget(),
+                                        fg="white").grid(row=2,columnspan=9)
+
+    l_tip = tk.Label(add_player_menu,
+                    text="".join((  "Quick tip : pressing TAB will",
+                                    "navigate through text boxes and buttons")),
+                    bg="#3F3F3F",
+                    fg="white").grid(row=3,columnspan=1)
+
+    main_menu.pack(padx=1,pady=80)
     root.title("5e DnD manager")
-    root.geometry('300x300')
+    root.geometry(f"{int(root.winfo_screenwidth()/2.3)}x{int(root.winfo_screenheight()/1.5)}")
     root.configure(bg="#262626")
-
-    b_new_game = Button(root,
-                        text = "New Adventure",
-                        width=30,
-                        height=5,
-                        bg="#3F3F3F",
-                        command=new_game,
-                        fg="white")
-
-    b_load_game = Button(root,
-                        text = "Load Adventure",
-                        width=30,
-                        height=5,
-                        bg="#3F3F3F",
-                        fg="white")
-
-    b_delete_all = Button(root,
-                        text = "Delete all Adventures",
-                        width=30,
-                        height=5,
-                        bg="#3F3F3F",
-                        fg="white")
-
-    b_new_game.pack()
-    b_load_game.pack()
-    b_delete_all.pack()
+    root.resizable(width=False,height=False)
     root.mainloop()
     return
 
 
 
 if __name__ == "__main__":
-
     main_widget()
 
 
