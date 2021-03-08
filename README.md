@@ -10,4 +10,4 @@ I have opted for a cc-by-nc-sa license since I would love to share the work with
 
 I am sure this and any possible derivative could never be the next major application on the market.
 
-I don't like the idea of commercial purpouse for any deivatives of this project, since DnD works with fantasy which, o my mind, needs to be kept free an still i havent found a free license thatdoes it :)
+I don't like the idea of commercial purpouse for any derivatives of this project, since DnD works with fantasy which, to my mind, needs to be kept free and still I haven't found a free license that does it :)
