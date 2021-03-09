@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_screenOvEEuH.ui'
+## Form generated from reading UI file 'main_screenJpzxof.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -13,13 +13,13 @@ from PySide2.QtGui import *
 from PySide2.QtWidgets import *
 
 
-class Ui_MainWindow(object):
-    def setupUi(self, MainWindow):
-        if not MainWindow.objectName():
-            MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1170, 700)
-        MainWindow.setMinimumSize(QSize(900, 700))
-        self.centralwidget = QWidget(MainWindow)
+class Ui_DnD_manager(object):
+    def setupUi(self, DnD_manager):
+        if not DnD_manager.objectName():
+            DnD_manager.setObjectName(u"DnD_manager")
+        DnD_manager.resize(1170, 700)
+        DnD_manager.setMinimumSize(QSize(900, 700))
+        self.centralwidget = QWidget(DnD_manager)
         self.centralwidget.setObjectName(u"centralwidget")
         self.centralwidget.setMinimumSize(QSize(900, 700))
         self.centralwidget.setStyleSheet(u"background-color: rgb(38, 38, 38);\n"
@@ -573,7 +573,7 @@ class Ui_MainWindow(object):
         self.page.setObjectName(u"page")
         self.label_23 = QLabel(self.page)
         self.label_23.setObjectName(u"label_23")
-        self.label_23.setGeometry(QRect(60, 50, 501, 561))
+        self.label_23.setGeometry(QRect(70, 30, 501, 561))
         self.label_23.setPixmap(QPixmap(u"DnD_logo.png"))
         self.stackedWidget_menus.addWidget(self.page)
 
@@ -611,55 +611,55 @@ class Ui_MainWindow(object):
 
         self.verticalLayout.addWidget(self.frame_bottom)
 
-        MainWindow.setCentralWidget(self.centralwidget)
+        DnD_manager.setCentralWidget(self.centralwidget)
 
-        self.retranslateUi(MainWindow)
+        self.retranslateUi(DnD_manager)
 
         self.stackedWidget_menus.setCurrentIndex(5)
 
 
-        QMetaObject.connectSlotsByName(MainWindow)
+        QMetaObject.connectSlotsByName(DnD_manager)
     # setupUi
 
-    def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.pushButton_left_bar_new_game.setText(QCoreApplication.translate("MainWindow", u"New Game", None))
-        self.pushButton_left_bar_load_game.setText(QCoreApplication.translate("MainWindow", u"Load Game", None))
-        self.pushButton_left_bar_save_game.setText(QCoreApplication.translate("MainWindow", u"Save Game", None))
-        self.pushButton_delete_game.setText(QCoreApplication.translate("MainWindow", u"Delete Game", None))
-        self.pushButton_left_bar_add_player.setText(QCoreApplication.translate("MainWindow", u"Add Player", None))
-        self.pushButton_delete_player.setText(QCoreApplication.translate("MainWindow", u"Delete Player", None))
-        self.pushButton_left_bar_export_pdf.setText(QCoreApplication.translate("MainWindow", u"Export PDF", None))
-        self.pushButton_left_bar_current_game.setText(QCoreApplication.translate("MainWindow", u"Current Game", None))
+    def retranslateUi(self, DnD_manager):
+        DnD_manager.setWindowTitle(QCoreApplication.translate("DnD_manager", u"5E DnD Manager", None))
+        self.pushButton_left_bar_new_game.setText(QCoreApplication.translate("DnD_manager", u"New Game", None))
+        self.pushButton_left_bar_load_game.setText(QCoreApplication.translate("DnD_manager", u"Load Game", None))
+        self.pushButton_left_bar_save_game.setText(QCoreApplication.translate("DnD_manager", u"Save Game", None))
+        self.pushButton_delete_game.setText(QCoreApplication.translate("DnD_manager", u"Delete Game", None))
+        self.pushButton_left_bar_add_player.setText(QCoreApplication.translate("DnD_manager", u"Add Player", None))
+        self.pushButton_delete_player.setText(QCoreApplication.translate("DnD_manager", u"Delete Player", None))
+        self.pushButton_left_bar_export_pdf.setText(QCoreApplication.translate("DnD_manager", u"Export PDF", None))
+        self.pushButton_left_bar_current_game.setText(QCoreApplication.translate("DnD_manager", u"Current Game", None))
         self.label_left_bar_image.setText("")
         self.label_main_page_image.setText("")
-        self.label_new_adventure.setText(QCoreApplication.translate("MainWindow", u"New Adventure", None))
-        self.label_player_number.setText(QCoreApplication.translate("MainWindow", u"Player Number", None))
-        self.label_adventure_name.setText(QCoreApplication.translate("MainWindow", u"Adventure Name", None))
-        self.pushButton_create_adventure.setText(QCoreApplication.translate("MainWindow", u"Create Adventure", None))
-        self.label_load_adventure.setText(QCoreApplication.translate("MainWindow", u"Load Adventure", None))
-        self.pushButton_load_adventure.setText(QCoreApplication.translate("MainWindow", u"Load Adventure", None))
-        self.label_adventure_name_load.setText(QCoreApplication.translate("MainWindow", u"Adventure Name", None))
-        self.label_delete_adventure.setText(QCoreApplication.translate("MainWindow", u"Delete Adventure", None))
-        self.label_warning_1.setText(QCoreApplication.translate("MainWindow", u"current game and progress will be deleted irreversibly", None))
-        self.label_warning_2.setText(QCoreApplication.translate("MainWindow", u"still u want to proceed?", None))
-        self.pushButton_No.setText(QCoreApplication.translate("MainWindow", u"No", None))
-        self.pushButton_yes.setText(QCoreApplication.translate("MainWindow", u"Yes", None))
-        self.label_add_player.setText(QCoreApplication.translate("MainWindow", u"Add Player", None))
-        self.label_player_name.setText(QCoreApplication.translate("MainWindow", u"Player Name", None))
-        self.label_class.setText(QCoreApplication.translate("MainWindow", u"Class", None))
-        self.label_race.setText(QCoreApplication.translate("MainWindow", u" Race", None))
-        self.label_character_name.setText(QCoreApplication.translate("MainWindow", u"Character Name", None))
-        self.label_alignment.setText(QCoreApplication.translate("MainWindow", u"Alignment", None))
-        self.label_charisma.setText(QCoreApplication.translate("MainWindow", u"Charisma", None))
-        self.label_strength.setText(QCoreApplication.translate("MainWindow", u"Strength", None))
-        self.label_wisdom.setText(QCoreApplication.translate("MainWindow", u"Wisdom", None))
-        self.label_dexterity.setText(QCoreApplication.translate("MainWindow", u"Dexterity", None))
-        self.label_constitution.setText(QCoreApplication.translate("MainWindow", u"Constitution", None))
-        self.label_intelligence.setText(QCoreApplication.translate("MainWindow", u"Intelligence", None))
-        self.pushButton_add_player.setText(QCoreApplication.translate("MainWindow", u"Add Player", None))
-        self.pushButton_alternative_add.setText(QCoreApplication.translate("MainWindow", u"Add Player and go back to Adventure menu", None))
+        self.label_new_adventure.setText(QCoreApplication.translate("DnD_manager", u"New Adventure", None))
+        self.label_player_number.setText(QCoreApplication.translate("DnD_manager", u"Player Number", None))
+        self.label_adventure_name.setText(QCoreApplication.translate("DnD_manager", u"Adventure Name", None))
+        self.pushButton_create_adventure.setText(QCoreApplication.translate("DnD_manager", u"Create Adventure", None))
+        self.label_load_adventure.setText(QCoreApplication.translate("DnD_manager", u"Load Adventure", None))
+        self.pushButton_load_adventure.setText(QCoreApplication.translate("DnD_manager", u"Load Adventure", None))
+        self.label_adventure_name_load.setText(QCoreApplication.translate("DnD_manager", u"Adventure Name", None))
+        self.label_delete_adventure.setText(QCoreApplication.translate("DnD_manager", u"Delete Adventure", None))
+        self.label_warning_1.setText(QCoreApplication.translate("DnD_manager", u"current game and progress will be deleted irreversibly", None))
+        self.label_warning_2.setText(QCoreApplication.translate("DnD_manager", u"still u want to proceed?", None))
+        self.pushButton_No.setText(QCoreApplication.translate("DnD_manager", u"No", None))
+        self.pushButton_yes.setText(QCoreApplication.translate("DnD_manager", u"Yes", None))
+        self.label_add_player.setText(QCoreApplication.translate("DnD_manager", u"Add Player", None))
+        self.label_player_name.setText(QCoreApplication.translate("DnD_manager", u"Player Name", None))
+        self.label_class.setText(QCoreApplication.translate("DnD_manager", u"Class", None))
+        self.label_race.setText(QCoreApplication.translate("DnD_manager", u" Race", None))
+        self.label_character_name.setText(QCoreApplication.translate("DnD_manager", u"Character Name", None))
+        self.label_alignment.setText(QCoreApplication.translate("DnD_manager", u"Alignment", None))
+        self.label_charisma.setText(QCoreApplication.translate("DnD_manager", u"Charisma", None))
+        self.label_strength.setText(QCoreApplication.translate("DnD_manager", u"Strength", None))
+        self.label_wisdom.setText(QCoreApplication.translate("DnD_manager", u"Wisdom", None))
+        self.label_dexterity.setText(QCoreApplication.translate("DnD_manager", u"Dexterity", None))
+        self.label_constitution.setText(QCoreApplication.translate("DnD_manager", u"Constitution", None))
+        self.label_intelligence.setText(QCoreApplication.translate("DnD_manager", u"Intelligence", None))
+        self.pushButton_add_player.setText(QCoreApplication.translate("DnD_manager", u"Add Player", None))
+        self.pushButton_alternative_add.setText(QCoreApplication.translate("DnD_manager", u"Add Player and go back to Adventure menu", None))
         self.label_23.setText("")
-        self.label_display.setText(QCoreApplication.translate("MainWindow", u"TEST TEXT", None))
+        self.label_display.setText(QCoreApplication.translate("DnD_manager", u"TEST TEXT", None))
     # retranslateUi
 

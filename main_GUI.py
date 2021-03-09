@@ -1,13 +1,11 @@
 
 
-################################################################################
-##
-## BY: WANDERSON M.PIMENTA
-## PROJECT MADE WITH: Qt Designer and PySide2
-## V: 1.0.0
-##
-################################################################################
+from GUI.ui_loading_screen import Ui_Loading_screen
 
+from GUI.ui_main_screen import Ui_DnD_manager
+
+import os
+import game_classes as Gc
 import sys
 import platform
 from PySide2 import QtCore, QtGui, QtWidgets
@@ -15,26 +13,25 @@ from PySide2.QtCore import (QCoreApplication, QPropertyAnimation, QDate, QDateTi
 from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont, QFontDatabase, QIcon, QKeySequence, QLinearGradient, QPalette, QPainter, QPixmap, QRadialGradient)
 from PySide2.QtWidgets import *
 
-## ==> SPLASH SCREEN
-from ui_loading_screen import Ui_Loading_screen
 
-## ==> MAIN WINDOW
-from ui_main import Ui_MainWindow
+print(os.path.dirname(os.getcwd()))
+
 
 ## ==> GLOBALS
 counter = 0
+curr_game=0
 
-# YOUR APPLICATION
+
+# MAIN WIDGET 
 class MainWindow(QMainWindow):
     def __init__(self):
         QMainWindow.__init__(self)
-        self.ui = Ui_MainWindow()
+        self.ui = Ui_DnD_manager()
         self.ui.setupUi(self)
+        self.bind_keys()
 
-        # MAIN WINDOW LABEL
-        QtCore.QTimer.singleShot(1500, lambda: self.ui.label.setText("<strong>THANKS</strong> FOR WATCHING"))
-        QtCore.QTimer.singleShot(1500, lambda: self.setStyleSheet("background-color: #222; color: #FFF"))
-
+    def bind_keys(self):
+        return
 
 # SPLASH SCREEN
 class SplashScreen(QMainWindow):
@@ -50,13 +47,6 @@ class SplashScreen(QMainWindow):
         self.setWindowFlag(QtCore.Qt.FramelessWindowHint)
         self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
 
-
-        ## DROP SHADOW EFFECT
-        self.shadow = QGraphicsDropShadowEffect(self)
-        self.shadow.setBlurRadius(20)
-        self.shadow.setXOffset(0)
-        self.shadow.setYOffset(0)
-        self.shadow.setColor(QColor(0, 0, 0, 60))
 
         ## QTIMER ==> START
         self.timer = QtCore.QTimer()
