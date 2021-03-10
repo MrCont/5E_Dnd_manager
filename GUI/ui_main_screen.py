@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_screenJpzxof.ui'
+## Form generated from reading UI file 'main_screenLsAdHM.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -108,11 +108,11 @@ class Ui_DnD_manager(object):
 
         self.verticalLayout_2.addWidget(self.pushButton_left_bar_save_game)
 
-        self.pushButton_delete_game = QPushButton(self.frame_left_bar)
-        self.pushButton_delete_game.setObjectName(u"pushButton_delete_game")
-        self.pushButton_delete_game.setMinimumSize(QSize(0, 50))
-        self.pushButton_delete_game.setFont(font)
-        self.pushButton_delete_game.setStyleSheet(u"QPushButton{\n"
+        self.pushButton_left_bar_delete_game = QPushButton(self.frame_left_bar)
+        self.pushButton_left_bar_delete_game.setObjectName(u"pushButton_left_bar_delete_game")
+        self.pushButton_left_bar_delete_game.setMinimumSize(QSize(0, 50))
+        self.pushButton_left_bar_delete_game.setFont(font)
+        self.pushButton_left_bar_delete_game.setStyleSheet(u"QPushButton{\n"
 "	background-color: rgb(63, 63, 63);\n"
 "	color: rgb(156, 156, 156);\n"
 "}\n"
@@ -122,7 +122,7 @@ class Ui_DnD_manager(object):
 "}\n"
 "")
 
-        self.verticalLayout_2.addWidget(self.pushButton_delete_game)
+        self.verticalLayout_2.addWidget(self.pushButton_left_bar_delete_game)
 
         self.pushButton_left_bar_add_player = QPushButton(self.frame_left_bar)
         self.pushButton_left_bar_add_player.setObjectName(u"pushButton_left_bar_add_player")
@@ -140,11 +140,11 @@ class Ui_DnD_manager(object):
 
         self.verticalLayout_2.addWidget(self.pushButton_left_bar_add_player)
 
-        self.pushButton_delete_player = QPushButton(self.frame_left_bar)
-        self.pushButton_delete_player.setObjectName(u"pushButton_delete_player")
-        self.pushButton_delete_player.setMinimumSize(QSize(0, 50))
-        self.pushButton_delete_player.setFont(font)
-        self.pushButton_delete_player.setStyleSheet(u"QPushButton{\n"
+        self.pushButton_left_bar_delete_player = QPushButton(self.frame_left_bar)
+        self.pushButton_left_bar_delete_player.setObjectName(u"pushButton_left_bar_delete_player")
+        self.pushButton_left_bar_delete_player.setMinimumSize(QSize(0, 50))
+        self.pushButton_left_bar_delete_player.setFont(font)
+        self.pushButton_left_bar_delete_player.setStyleSheet(u"QPushButton{\n"
 "	background-color: rgb(63, 63, 63);\n"
 "	color: rgb(156, 156, 156);\n"
 "}\n"
@@ -154,7 +154,7 @@ class Ui_DnD_manager(object):
 "}\n"
 "")
 
-        self.verticalLayout_2.addWidget(self.pushButton_delete_player)
+        self.verticalLayout_2.addWidget(self.pushButton_left_bar_delete_player)
 
         self.pushButton_left_bar_export_pdf = QPushButton(self.frame_left_bar)
         self.pushButton_left_bar_export_pdf.setObjectName(u"pushButton_left_bar_export_pdf")
@@ -581,7 +581,13 @@ class Ui_DnD_manager(object):
 
         self.label_display = QLabel(self.frame_stack_and_label)
         self.label_display.setObjectName(u"label_display")
+        sizePolicy1 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Preferred)
+        sizePolicy1.setHorizontalStretch(0)
+        sizePolicy1.setVerticalStretch(0)
+        sizePolicy1.setHeightForWidth(self.label_display.sizePolicy().hasHeightForWidth())
+        self.label_display.setSizePolicy(sizePolicy1)
         self.label_display.setMinimumSize(QSize(350, 0))
+        self.label_display.setMaximumSize(QSize(350, 16777215))
         self.label_display.setBaseSize(QSize(0, 0))
         font3 = QFont()
         font3.setFamily(u"Copperplate Gothic Bold")
@@ -615,7 +621,7 @@ class Ui_DnD_manager(object):
 
         self.retranslateUi(DnD_manager)
 
-        self.stackedWidget_menus.setCurrentIndex(5)
+        self.stackedWidget_menus.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(DnD_manager)
@@ -626,9 +632,9 @@ class Ui_DnD_manager(object):
         self.pushButton_left_bar_new_game.setText(QCoreApplication.translate("DnD_manager", u"New Game", None))
         self.pushButton_left_bar_load_game.setText(QCoreApplication.translate("DnD_manager", u"Load Game", None))
         self.pushButton_left_bar_save_game.setText(QCoreApplication.translate("DnD_manager", u"Save Game", None))
-        self.pushButton_delete_game.setText(QCoreApplication.translate("DnD_manager", u"Delete Game", None))
+        self.pushButton_left_bar_delete_game.setText(QCoreApplication.translate("DnD_manager", u"Delete Game", None))
         self.pushButton_left_bar_add_player.setText(QCoreApplication.translate("DnD_manager", u"Add Player", None))
-        self.pushButton_delete_player.setText(QCoreApplication.translate("DnD_manager", u"Delete Player", None))
+        self.pushButton_left_bar_delete_player.setText(QCoreApplication.translate("DnD_manager", u"Delete Player", None))
         self.pushButton_left_bar_export_pdf.setText(QCoreApplication.translate("DnD_manager", u"Export PDF", None))
         self.pushButton_left_bar_current_game.setText(QCoreApplication.translate("DnD_manager", u"Current Game", None))
         self.label_left_bar_image.setText("")

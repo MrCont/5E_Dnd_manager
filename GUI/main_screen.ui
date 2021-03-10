@@ -201,7 +201,7 @@ QPushButton:hover{
               </widget>
              </item>
              <item>
-              <widget class="QPushButton" name="pushButton_delete_game">
+              <widget class="QPushButton" name="pushButton_left_bar_delete_game">
                <property name="minimumSize">
                 <size>
                  <width>0</width>
@@ -261,7 +261,7 @@ QPushButton:hover{
               </widget>
              </item>
              <item>
-              <widget class="QPushButton" name="pushButton_delete_player">
+              <widget class="QPushButton" name="pushButton_left_bar_delete_player">
                <property name="minimumSize">
                 <size>
                  <width>0</width>
@@ -408,7 +408,7 @@ QPushButton:hover{
                 <string notr="true">border-radius:20px;</string>
                </property>
                <property name="currentIndex">
-                <number>5</number>
+                <number>1</number>
                </property>
                <widget class="QWidget" name="page_main">
                 <widget class="QLabel" name="label_main_page_image">
@@ -1230,10 +1230,22 @@ QPushButton:hover{
              </item>
              <item>
               <widget class="QLabel" name="label_display">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
                <property name="minimumSize">
                 <size>
                  <width>350</width>
                  <height>0</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>350</width>
+                 <height>16777215</height>
                 </size>
                </property>
                <property name="baseSize">

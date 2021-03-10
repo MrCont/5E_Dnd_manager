@@ -4,6 +4,8 @@ from GUI.ui_loading_screen import Ui_Loading_screen
 
 from GUI.ui_main_screen import Ui_DnD_manager
 
+from GUI.button_setup import button_bind
+
 import os
 import game_classes as Gc
 import sys
@@ -19,18 +21,22 @@ print(os.path.dirname(os.getcwd()))
 
 ## ==> GLOBALS
 counter = 0
-curr_game=0
 
 
 # MAIN WIDGET 
 class MainWindow(QMainWindow):
     def __init__(self):
         QMainWindow.__init__(self)
-        self.ui = Ui_DnD_manager()
-        self.ui.setupUi(self)
-        self.bind_keys()
+        self.reset()
 
-    def bind_keys(self):
+        
+    def reset(self):
+        self.ui = Ui_DnD_manager()
+        self.curr_game=Gc.game()
+        self.ui.setupUi(self)
+        self.ui=button_bind(self)
+        
+
         return
 
 # SPLASH SCREEN

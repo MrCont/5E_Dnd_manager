@@ -48,7 +48,7 @@ class game():
     def __init__(self):
         self.players = []
         self.n_adventure = ""
-
+        self.adventure_name="EMPTY GAME"
         return
 
     def export_pdf(self):
