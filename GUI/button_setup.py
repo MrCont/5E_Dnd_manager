@@ -29,6 +29,8 @@ def left_bar(widget):
 
     widget.ui.pushButton_left_bar_add_player.clicked.connect(
             lambda:widget.ui.stackedWidget_menus.setCurrentWidget(widget.ui.page_add_player))
+
+
     return widget.ui
 
 def button_bind(widget):
