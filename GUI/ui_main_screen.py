@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_screenLsAdHM.ui'
+## Form generated from reading UI file 'main_screen.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -17,8 +17,13 @@ class Ui_DnD_manager(object):
     def setupUi(self, DnD_manager):
         if not DnD_manager.objectName():
             DnD_manager.setObjectName(u"DnD_manager")
-        DnD_manager.resize(1170, 700)
-        DnD_manager.setMinimumSize(QSize(900, 700))
+        DnD_manager.resize(1364, 700)
+        sizePolicy = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(DnD_manager.sizePolicy().hasHeightForWidth())
+        DnD_manager.setSizePolicy(sizePolicy)
+        DnD_manager.setMinimumSize(QSize(1170, 700))
         self.centralwidget = QWidget(DnD_manager)
         self.centralwidget.setObjectName(u"centralwidget")
         self.centralwidget.setMinimumSize(QSize(900, 700))
@@ -44,9 +49,6 @@ class Ui_DnD_manager(object):
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.frame_left_bar = QFrame(self.frame_all_menu)
         self.frame_left_bar.setObjectName(u"frame_left_bar")
-        sizePolicy = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.frame_left_bar.sizePolicy().hasHeightForWidth())
         self.frame_left_bar.setSizePolicy(sizePolicy)
         self.frame_left_bar.setMinimumSize(QSize(120, 0))
@@ -57,12 +59,28 @@ class Ui_DnD_manager(object):
         self.frame_left_bar.setFrameShadow(QFrame.Raised)
         self.verticalLayout_2 = QVBoxLayout(self.frame_left_bar)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
-        self.pushButton_left_bar_new_game = QPushButton(self.frame_left_bar)
-        self.pushButton_left_bar_new_game.setObjectName(u"pushButton_left_bar_new_game")
-        self.pushButton_left_bar_new_game.setMinimumSize(QSize(0, 50))
+        self.pushButton_left_bar_current_game = QPushButton(self.frame_left_bar)
+        self.pushButton_left_bar_current_game.setObjectName(u"pushButton_left_bar_current_game")
+        self.pushButton_left_bar_current_game.setMinimumSize(QSize(0, 50))
         font = QFont()
         font.setFamily(u"Copperplate Gothic Light")
         font.setPointSize(10)
+        self.pushButton_left_bar_current_game.setFont(font)
+        self.pushButton_left_bar_current_game.setStyleSheet(u"QPushButton{\n"
+"	background-color: rgb(63, 63, 63);\n"
+"	color: rgb(156, 156, 156);\n"
+"}\n"
+"QPushButton:hover{\n"
+"	background-color: rgb(156, 156, 156);\n"
+"	color: rgb(63, 63, 63);\n"
+"}\n"
+"")
+
+        self.verticalLayout_2.addWidget(self.pushButton_left_bar_current_game)
+
+        self.pushButton_left_bar_new_game = QPushButton(self.frame_left_bar)
+        self.pushButton_left_bar_new_game.setObjectName(u"pushButton_left_bar_new_game")
+        self.pushButton_left_bar_new_game.setMinimumSize(QSize(0, 50))
         self.pushButton_left_bar_new_game.setFont(font)
         self.pushButton_left_bar_new_game.setStyleSheet(u"QPushButton{\n"
 "	background-color: rgb(63, 63, 63);\n"
@@ -172,22 +190,6 @@ class Ui_DnD_manager(object):
 
         self.verticalLayout_2.addWidget(self.pushButton_left_bar_export_pdf)
 
-        self.pushButton_left_bar_current_game = QPushButton(self.frame_left_bar)
-        self.pushButton_left_bar_current_game.setObjectName(u"pushButton_left_bar_current_game")
-        self.pushButton_left_bar_current_game.setMinimumSize(QSize(0, 50))
-        self.pushButton_left_bar_current_game.setFont(font)
-        self.pushButton_left_bar_current_game.setStyleSheet(u"QPushButton{\n"
-"	background-color: rgb(63, 63, 63);\n"
-"	color: rgb(156, 156, 156);\n"
-"}\n"
-"QPushButton:hover{\n"
-"	background-color: rgb(156, 156, 156);\n"
-"	color: rgb(63, 63, 63);\n"
-"}\n"
-"")
-
-        self.verticalLayout_2.addWidget(self.pushButton_left_bar_current_game)
-
         self.label_left_bar_image = QLabel(self.frame_left_bar)
         self.label_left_bar_image.setObjectName(u"label_left_bar_image")
         self.label_left_bar_image.setMinimumSize(QSize(90, 90))
@@ -210,14 +212,11 @@ class Ui_DnD_manager(object):
         self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
         self.stackedWidget_menus = QStackedWidget(self.frame_stack_and_label)
         self.stackedWidget_menus.setObjectName(u"stackedWidget_menus")
+        sizePolicy.setHeightForWidth(self.stackedWidget_menus.sizePolicy().hasHeightForWidth())
+        self.stackedWidget_menus.setSizePolicy(sizePolicy)
+        self.stackedWidget_menus.setMinimumSize(QSize(656, 0))
+        self.stackedWidget_menus.setMaximumSize(QSize(656, 16777215))
         self.stackedWidget_menus.setStyleSheet(u"border-radius:20px;")
-        self.page_main = QWidget()
-        self.page_main.setObjectName(u"page_main")
-        self.label_main_page_image = QLabel(self.page_main)
-        self.label_main_page_image.setObjectName(u"label_main_page_image")
-        self.label_main_page_image.setGeometry(QRect(70, 30, 501, 561))
-        self.label_main_page_image.setPixmap(QPixmap(u"DnD_logo.png"))
-        self.stackedWidget_menus.addWidget(self.page_main)
         self.page_new_adventure = QWidget()
         self.page_new_adventure.setObjectName(u"page_new_adventure")
         self.label_new_adventure = QLabel(self.page_new_adventure)
@@ -542,7 +541,7 @@ class Ui_DnD_manager(object):
 
         self.pushButton_add_player = QPushButton(self.page_add_player)
         self.pushButton_add_player.setObjectName(u"pushButton_add_player")
-        self.pushButton_add_player.setGeometry(QRect(170, 520, 281, 50))
+        self.pushButton_add_player.setGeometry(QRect(160, 480, 281, 50))
         self.pushButton_add_player.setMinimumSize(QSize(0, 50))
         self.pushButton_add_player.setFont(font)
         self.pushButton_add_player.setStyleSheet(u"QPushButton{\n"
@@ -556,7 +555,7 @@ class Ui_DnD_manager(object):
 "")
         self.pushButton_alternative_add = QPushButton(self.page_add_player)
         self.pushButton_alternative_add.setObjectName(u"pushButton_alternative_add")
-        self.pushButton_alternative_add.setGeometry(QRect(140, 580, 341, 50))
+        self.pushButton_alternative_add.setGeometry(QRect(130, 540, 341, 50))
         self.pushButton_alternative_add.setMinimumSize(QSize(0, 50))
         self.pushButton_alternative_add.setFont(font)
         self.pushButton_alternative_add.setStyleSheet(u"QPushButton{\n"
@@ -568,31 +567,199 @@ class Ui_DnD_manager(object):
 "	color: rgb(63, 63, 63);\n"
 "}\n"
 "")
+        self.pushButton_add_player_2 = QPushButton(self.page_add_player)
+        self.pushButton_add_player_2.setObjectName(u"pushButton_add_player_2")
+        self.pushButton_add_player_2.setGeometry(QRect(160, 600, 281, 50))
+        self.pushButton_add_player_2.setMinimumSize(QSize(0, 50))
+        self.pushButton_add_player_2.setFont(font)
+        self.pushButton_add_player_2.setStyleSheet(u"QPushButton{\n"
+"	background-color: rgb(63, 63, 63);\n"
+"	color: rgb(156, 156, 156);\n"
+"}\n"
+"QPushButton:hover{\n"
+"	background-color: rgb(156, 156, 156);\n"
+"	color: rgb(63, 63, 63);\n"
+"}\n"
+"")
         self.stackedWidget_menus.addWidget(self.page_add_player)
-        self.page = QWidget()
-        self.page.setObjectName(u"page")
-        self.label_23 = QLabel(self.page)
-        self.label_23.setObjectName(u"label_23")
-        self.label_23.setGeometry(QRect(70, 30, 501, 561))
-        self.label_23.setPixmap(QPixmap(u"DnD_logo.png"))
-        self.stackedWidget_menus.addWidget(self.page)
+        self.page_current_adventure = QWidget()
+        self.page_current_adventure.setObjectName(u"page_current_adventure")
+        self.listWidget = QListWidget(self.page_current_adventure)
+        self.listWidget.setObjectName(u"listWidget")
+        self.listWidget.setGeometry(QRect(50, 120, 481, 141))
+        self.listWidget.setStyleSheet(u"QListWidget:hover{\n"
+"	background-color: rgb(63, 63, 63);\n"
+"	color: rgb(63, 63, 63);\n"
+"}")
+        self.label_current_game = QLabel(self.page_current_adventure)
+        self.label_current_game.setObjectName(u"label_current_game")
+        self.label_current_game.setGeometry(QRect(40, 20, 291, 31))
+        self.label_current_game.setFont(font1)
+        self.label_current_game.setStyleSheet(u"color: rgb(156, 156, 156);")
+        self.label_player_list = QLabel(self.page_current_adventure)
+        self.label_player_list.setObjectName(u"label_player_list")
+        self.label_player_list.setGeometry(QRect(60, 70, 291, 31))
+        font3 = QFont()
+        font3.setFamily(u"Copperplate Gothic Bold")
+        font3.setPointSize(14)
+        self.label_player_list.setFont(font3)
+        self.label_player_list.setStyleSheet(u"color: rgb(156, 156, 156);")
+        self.label_selected_player = QLabel(self.page_current_adventure)
+        self.label_selected_player.setObjectName(u"label_selected_player")
+        self.label_selected_player.setGeometry(QRect(70, 300, 411, 17))
+        self.label_selected_player.setFont(font2)
+        self.label_selected_player.setStyleSheet(u"color: rgb(156, 156, 156);")
+        self.pushButton_level_up = QPushButton(self.page_current_adventure)
+        self.pushButton_level_up.setObjectName(u"pushButton_level_up")
+        self.pushButton_level_up.setGeometry(QRect(140, 400, 281, 50))
+        self.pushButton_level_up.setMinimumSize(QSize(0, 50))
+        self.pushButton_level_up.setFont(font)
+        self.pushButton_level_up.setStyleSheet(u"QPushButton{\n"
+"	background-color: rgb(63, 63, 63);\n"
+"	color: rgb(156, 156, 156);\n"
+"}\n"
+"QPushButton:hover{\n"
+"	background-color: rgb(156, 156, 156);\n"
+"	color: rgb(63, 63, 63);\n"
+"}\n"
+"")
+        self.pushButton_show_stats = QPushButton(self.page_current_adventure)
+        self.pushButton_show_stats.setObjectName(u"pushButton_show_stats")
+        self.pushButton_show_stats.setGeometry(QRect(140, 340, 281, 50))
+        self.pushButton_show_stats.setMinimumSize(QSize(0, 50))
+        self.pushButton_show_stats.setFont(font)
+        self.pushButton_show_stats.setStyleSheet(u"QPushButton{\n"
+"	background-color: rgb(63, 63, 63);\n"
+"	color: rgb(156, 156, 156);\n"
+"}\n"
+"QPushButton:hover{\n"
+"	background-color: rgb(156, 156, 156);\n"
+"	color: rgb(63, 63, 63);\n"
+"}\n"
+"")
+        self.label_dices_tools = QLabel(self.page_current_adventure)
+        self.label_dices_tools.setObjectName(u"label_dices_tools")
+        self.label_dices_tools.setGeometry(QRect(70, 480, 411, 17))
+        self.label_dices_tools.setFont(font2)
+        self.label_dices_tools.setStyleSheet(u"color: rgb(156, 156, 156);")
+        self.gridLayoutWidget_4 = QWidget(self.page_current_adventure)
+        self.gridLayoutWidget_4.setObjectName(u"gridLayoutWidget_4")
+        self.gridLayoutWidget_4.setGeometry(QRect(40, 500, 511, 68))
+        self.gridLayout_2 = QGridLayout(self.gridLayoutWidget_4)
+        self.gridLayout_2.setObjectName(u"gridLayout_2")
+        self.gridLayout_2.setHorizontalSpacing(30)
+        self.gridLayout_2.setContentsMargins(3, 3, 3, 3)
+        self.label_size = QLabel(self.gridLayoutWidget_4)
+        self.label_size.setObjectName(u"label_size")
+        self.label_size.setFont(font2)
+        self.label_size.setStyleSheet(u"color: rgb(156, 156, 156);")
+
+        self.gridLayout_2.addWidget(self.label_size, 0, 0, 1, 1)
+
+        self.lineEdit_size = QLineEdit(self.gridLayoutWidget_4)
+        self.lineEdit_size.setObjectName(u"lineEdit_size")
+        self.lineEdit_size.setStyleSheet(u"\n"
+"color: rgb(156, 156, 156);\n"
+"background-color: rgb(63, 63, 63);")
+
+        self.gridLayout_2.addWidget(self.lineEdit_size, 0, 1, 1, 1)
+
+        self.label_times = QLabel(self.gridLayoutWidget_4)
+        self.label_times.setObjectName(u"label_times")
+        self.label_times.setFont(font2)
+        self.label_times.setStyleSheet(u"color: rgb(156, 156, 156);")
+
+        self.gridLayout_2.addWidget(self.label_times, 0, 2, 1, 1)
+
+        self.lineEdit_times = QLineEdit(self.gridLayoutWidget_4)
+        self.lineEdit_times.setObjectName(u"lineEdit_times")
+        self.lineEdit_times.setStyleSheet(u"color: rgb(156, 156, 156);\n"
+"background-color: rgb(63, 63, 63);")
+
+        self.gridLayout_2.addWidget(self.lineEdit_times, 0, 3, 1, 1)
+
+        self.pushButton_throw = QPushButton(self.page_current_adventure)
+        self.pushButton_throw.setObjectName(u"pushButton_throw")
+        self.pushButton_throw.setGeometry(QRect(140, 590, 281, 50))
+        self.pushButton_throw.setMinimumSize(QSize(0, 50))
+        self.pushButton_throw.setFont(font)
+        self.pushButton_throw.setStyleSheet(u"QPushButton{\n"
+"	background-color: rgb(63, 63, 63);\n"
+"	color: rgb(156, 156, 156);\n"
+"}\n"
+"QPushButton:hover{\n"
+"	background-color: rgb(156, 156, 156);\n"
+"	color: rgb(63, 63, 63);\n"
+"}\n"
+"")
+        self.stackedWidget_menus.addWidget(self.page_current_adventure)
+        self.page_delete_player = QWidget()
+        self.page_delete_player.setObjectName(u"page_delete_player")
+        self.label_delete_player = QLabel(self.page_delete_player)
+        self.label_delete_player.setObjectName(u"label_delete_player")
+        self.label_delete_player.setGeometry(QRect(30, 20, 291, 31))
+        self.label_delete_player.setFont(font1)
+        self.label_delete_player.setStyleSheet(u"color: rgb(156, 156, 156);")
+        self.comboBox_choose_player = QComboBox(self.page_delete_player)
+        self.comboBox_choose_player.setObjectName(u"comboBox_choose_player")
+        self.comboBox_choose_player.setGeometry(QRect(200, 160, 331, 16))
+        self.comboBox_choose_player.setStyleSheet(u"color: rgb(156, 156, 156);\n"
+"background-color: rgb(63, 63, 63);")
+        self.label_choose_player = QLabel(self.page_delete_player)
+        self.label_choose_player.setObjectName(u"label_choose_player")
+        self.label_choose_player.setGeometry(QRect(50, 160, 144, 17))
+        self.label_choose_player.setFont(font2)
+        self.label_choose_player.setStyleSheet(u"color: rgb(156, 156, 156);")
+        self.pushButton_delete = QPushButton(self.page_delete_player)
+        self.pushButton_delete.setObjectName(u"pushButton_delete")
+        self.pushButton_delete.setGeometry(QRect(140, 280, 281, 50))
+        self.pushButton_delete.setMinimumSize(QSize(0, 50))
+        self.pushButton_delete.setFont(font)
+        self.pushButton_delete.setStyleSheet(u"QPushButton{\n"
+"	background-color: rgb(63, 63, 63);\n"
+"	color: rgb(156, 156, 156);\n"
+"}\n"
+"QPushButton:hover{\n"
+"	background-color: rgb(156, 156, 156);\n"
+"	color: rgb(63, 63, 63);\n"
+"}\n"
+"")
+        self.pushButton_cancel = QPushButton(self.page_delete_player)
+        self.pushButton_cancel.setObjectName(u"pushButton_cancel")
+        self.pushButton_cancel.setGeometry(QRect(110, 340, 331, 50))
+        self.pushButton_cancel.setMinimumSize(QSize(0, 50))
+        self.pushButton_cancel.setFont(font)
+        self.pushButton_cancel.setStyleSheet(u"QPushButton{\n"
+"	background-color: rgb(63, 63, 63);\n"
+"	color: rgb(156, 156, 156);\n"
+"}\n"
+"QPushButton:hover{\n"
+"	background-color: rgb(156, 156, 156);\n"
+"	color: rgb(63, 63, 63);\n"
+"}\n"
+"")
+        self.stackedWidget_menus.addWidget(self.page_delete_player)
+        self.page_main = QWidget()
+        self.page_main.setObjectName(u"page_main")
+        self.label_main_page_image = QLabel(self.page_main)
+        self.label_main_page_image.setObjectName(u"label_main_page_image")
+        self.label_main_page_image.setGeometry(QRect(70, 30, 501, 561))
+        self.label_main_page_image.setPixmap(QPixmap(u"DnD_logo.png"))
+        self.stackedWidget_menus.addWidget(self.page_main)
 
         self.horizontalLayout_3.addWidget(self.stackedWidget_menus)
 
         self.label_display = QLabel(self.frame_stack_and_label)
         self.label_display.setObjectName(u"label_display")
-        sizePolicy1 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Preferred)
-        sizePolicy1.setHorizontalStretch(0)
-        sizePolicy1.setVerticalStretch(0)
-        sizePolicy1.setHeightForWidth(self.label_display.sizePolicy().hasHeightForWidth())
-        self.label_display.setSizePolicy(sizePolicy1)
-        self.label_display.setMinimumSize(QSize(350, 0))
-        self.label_display.setMaximumSize(QSize(350, 16777215))
+        sizePolicy.setHeightForWidth(self.label_display.sizePolicy().hasHeightForWidth())
+        self.label_display.setSizePolicy(sizePolicy)
+        self.label_display.setMinimumSize(QSize(400, 0))
+        self.label_display.setMaximumSize(QSize(16777215, 16777215))
         self.label_display.setBaseSize(QSize(0, 0))
-        font3 = QFont()
-        font3.setFamily(u"Copperplate Gothic Bold")
-        font3.setPointSize(10)
-        self.label_display.setFont(font3)
+        font4 = QFont()
+        font4.setFamily(u"Copperplate Gothic Bold")
+        font4.setPointSize(10)
+        self.label_display.setFont(font4)
         self.label_display.setContextMenuPolicy(Qt.DefaultContextMenu)
         self.label_display.setStyleSheet(u"background-color: rgb(156, 156, 156);\n"
 "color: rgb(38, 38, 38);\n"
@@ -621,7 +788,7 @@ class Ui_DnD_manager(object):
 
         self.retranslateUi(DnD_manager)
 
-        self.stackedWidget_menus.setCurrentIndex(1)
+        self.stackedWidget_menus.setCurrentIndex(5)
 
 
         QMetaObject.connectSlotsByName(DnD_manager)
@@ -629,6 +796,7 @@ class Ui_DnD_manager(object):
 
     def retranslateUi(self, DnD_manager):
         DnD_manager.setWindowTitle(QCoreApplication.translate("DnD_manager", u"5E DnD Manager", None))
+        self.pushButton_left_bar_current_game.setText(QCoreApplication.translate("DnD_manager", u"Current Game", None))
         self.pushButton_left_bar_new_game.setText(QCoreApplication.translate("DnD_manager", u"New Game", None))
         self.pushButton_left_bar_load_game.setText(QCoreApplication.translate("DnD_manager", u"Load Game", None))
         self.pushButton_left_bar_save_game.setText(QCoreApplication.translate("DnD_manager", u"Save Game", None))
@@ -636,9 +804,7 @@ class Ui_DnD_manager(object):
         self.pushButton_left_bar_add_player.setText(QCoreApplication.translate("DnD_manager", u"Add Player", None))
         self.pushButton_left_bar_delete_player.setText(QCoreApplication.translate("DnD_manager", u"Delete Player", None))
         self.pushButton_left_bar_export_pdf.setText(QCoreApplication.translate("DnD_manager", u"Export PDF", None))
-        self.pushButton_left_bar_current_game.setText(QCoreApplication.translate("DnD_manager", u"Current Game", None))
         self.label_left_bar_image.setText("")
-        self.label_main_page_image.setText("")
         self.label_new_adventure.setText(QCoreApplication.translate("DnD_manager", u"New Adventure", None))
         self.label_player_number.setText(QCoreApplication.translate("DnD_manager", u"Player Number", None))
         self.label_adventure_name.setText(QCoreApplication.translate("DnD_manager", u"Adventure Name", None))
@@ -665,7 +831,21 @@ class Ui_DnD_manager(object):
         self.label_intelligence.setText(QCoreApplication.translate("DnD_manager", u"Intelligence", None))
         self.pushButton_add_player.setText(QCoreApplication.translate("DnD_manager", u"Add Player", None))
         self.pushButton_alternative_add.setText(QCoreApplication.translate("DnD_manager", u"Add Player and go back to Adventure menu", None))
-        self.label_23.setText("")
+        self.pushButton_add_player_2.setText(QCoreApplication.translate("DnD_manager", u"Back to Adventure menu", None))
+        self.label_current_game.setText(QCoreApplication.translate("DnD_manager", u"NO GAME SELECTED", None))
+        self.label_player_list.setText(QCoreApplication.translate("DnD_manager", u"Player List", None))
+        self.label_selected_player.setText(QCoreApplication.translate("DnD_manager", u"selected player:", None))
+        self.pushButton_level_up.setText(QCoreApplication.translate("DnD_manager", u"level up", None))
+        self.pushButton_show_stats.setText(QCoreApplication.translate("DnD_manager", u"show stats", None))
+        self.label_dices_tools.setText(QCoreApplication.translate("DnD_manager", u"Dices tools", None))
+        self.label_size.setText(QCoreApplication.translate("DnD_manager", u"size", None))
+        self.label_times.setText(QCoreApplication.translate("DnD_manager", u"times", None))
+        self.pushButton_throw.setText(QCoreApplication.translate("DnD_manager", u"throw", None))
+        self.label_delete_player.setText(QCoreApplication.translate("DnD_manager", u"Delete Player", None))
+        self.label_choose_player.setText(QCoreApplication.translate("DnD_manager", u"choose player:", None))
+        self.pushButton_delete.setText(QCoreApplication.translate("DnD_manager", u"Delete", None))
+        self.pushButton_cancel.setText(QCoreApplication.translate("DnD_manager", u"Cancel and go back to Current Adventure", None))
+        self.label_main_page_image.setText("")
         self.label_display.setText(QCoreApplication.translate("DnD_manager", u"TEST TEXT", None))
     # retranslateUi
 

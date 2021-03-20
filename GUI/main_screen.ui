@@ -6,13 +6,19 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1170</width>
+    <width>1364</width>
     <height>700</height>
    </rect>
   </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
   <property name="minimumSize">
    <size>
-    <width>900</width>
+    <width>1170</width>
     <height>700</height>
    </size>
   </property>
@@ -110,6 +116,36 @@ border-radius:10px;</string>
              <enum>QFrame::Raised</enum>
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_2">
+             <item>
+              <widget class="QPushButton" name="pushButton_left_bar_current_game">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>50</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Copperplate Gothic Light</family>
+                 <pointsize>10</pointsize>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton{
+	background-color: rgb(63, 63, 63);
+	color: rgb(156, 156, 156);
+}
+QPushButton:hover{
+	background-color: rgb(156, 156, 156);
+	color: rgb(63, 63, 63);
+}
+</string>
+               </property>
+               <property name="text">
+                <string>Current Game</string>
+               </property>
+              </widget>
+             </item>
              <item>
               <widget class="QPushButton" name="pushButton_left_bar_new_game">
                <property name="minimumSize">
@@ -320,36 +356,6 @@ QPushButton:hover{
                </property>
               </widget>
              </item>
-             <item>
-              <widget class="QPushButton" name="pushButton_left_bar_current_game">
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>50</height>
-                </size>
-               </property>
-               <property name="font">
-                <font>
-                 <family>Copperplate Gothic Light</family>
-                 <pointsize>10</pointsize>
-                </font>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">QPushButton{
-	background-color: rgb(63, 63, 63);
-	color: rgb(156, 156, 156);
-}
-QPushButton:hover{
-	background-color: rgb(156, 156, 156);
-	color: rgb(63, 63, 63);
-}
-</string>
-               </property>
-               <property name="text">
-                <string>Current Game</string>
-               </property>
-              </widget>
-             </item>
              <item alignment="Qt::AlignHCenter|Qt::AlignBottom">
               <widget class="QLabel" name="label_left_bar_image">
                <property name="minimumSize">
@@ -404,30 +410,30 @@ QPushButton:hover{
              </property>
              <item>
               <widget class="QStackedWidget" name="stackedWidget_menus">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>656</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>656</width>
+                 <height>16777215</height>
+                </size>
+               </property>
                <property name="styleSheet">
                 <string notr="true">border-radius:20px;</string>
                </property>
                <property name="currentIndex">
-                <number>1</number>
+                <number>5</number>
                </property>
-               <widget class="QWidget" name="page_main">
-                <widget class="QLabel" name="label_main_page_image">
-                 <property name="geometry">
-                  <rect>
-                   <x>70</x>
-                   <y>30</y>
-                   <width>501</width>
-                   <height>561</height>
-                  </rect>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                 <property name="pixmap">
-                  <pixmap>DnD_logo.png</pixmap>
-                 </property>
-                </widget>
-               </widget>
                <widget class="QWidget" name="page_new_adventure">
                 <widget class="QLabel" name="label_new_adventure">
                  <property name="geometry">
@@ -1138,8 +1144,8 @@ background-color: rgb(63, 63, 63);</string>
                 <widget class="QPushButton" name="pushButton_add_player">
                  <property name="geometry">
                   <rect>
-                   <x>170</x>
-                   <y>520</y>
+                   <x>160</x>
+                   <y>480</y>
                    <width>281</width>
                    <height>50</height>
                   </rect>
@@ -1174,8 +1180,8 @@ QPushButton:hover{
                 <widget class="QPushButton" name="pushButton_alternative_add">
                  <property name="geometry">
                   <rect>
-                   <x>140</x>
-                   <y>580</y>
+                   <x>130</x>
+                   <y>540</y>
                    <width>341</width>
                    <height>50</height>
                   </rect>
@@ -1207,9 +1213,467 @@ QPushButton:hover{
                   <string>Add Player and go back to Adventure menu</string>
                  </property>
                 </widget>
+                <widget class="QPushButton" name="pushButton_add_player_2">
+                 <property name="geometry">
+                  <rect>
+                   <x>160</x>
+                   <y>600</y>
+                   <width>281</width>
+                   <height>50</height>
+                  </rect>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>50</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>Copperplate Gothic Light</family>
+                   <pointsize>10</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QPushButton{
+	background-color: rgb(63, 63, 63);
+	color: rgb(156, 156, 156);
+}
+QPushButton:hover{
+	background-color: rgb(156, 156, 156);
+	color: rgb(63, 63, 63);
+}
+</string>
+                 </property>
+                 <property name="text">
+                  <string>Back to Adventure menu</string>
+                 </property>
+                </widget>
                </widget>
-               <widget class="QWidget" name="page">
-                <widget class="QLabel" name="label_23">
+               <widget class="QWidget" name="page_current_adventure">
+                <widget class="QListWidget" name="listWidget">
+                 <property name="geometry">
+                  <rect>
+                   <x>50</x>
+                   <y>120</y>
+                   <width>481</width>
+                   <height>141</height>
+                  </rect>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QListWidget:hover{
+	background-color: rgb(63, 63, 63);
+	color: rgb(63, 63, 63);
+}</string>
+                 </property>
+                </widget>
+                <widget class="QLabel" name="label_current_game">
+                 <property name="geometry">
+                  <rect>
+                   <x>40</x>
+                   <y>20</y>
+                   <width>291</width>
+                   <height>31</height>
+                  </rect>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>Copperplate Gothic Bold</family>
+                   <pointsize>16</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color: rgb(156, 156, 156);</string>
+                 </property>
+                 <property name="text">
+                  <string>NO GAME SELECTED</string>
+                 </property>
+                </widget>
+                <widget class="QLabel" name="label_player_list">
+                 <property name="geometry">
+                  <rect>
+                   <x>60</x>
+                   <y>70</y>
+                   <width>291</width>
+                   <height>31</height>
+                  </rect>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>Copperplate Gothic Bold</family>
+                   <pointsize>14</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color: rgb(156, 156, 156);</string>
+                 </property>
+                 <property name="text">
+                  <string>Player List</string>
+                 </property>
+                </widget>
+                <widget class="QLabel" name="label_selected_player">
+                 <property name="geometry">
+                  <rect>
+                   <x>70</x>
+                   <y>300</y>
+                   <width>411</width>
+                   <height>17</height>
+                  </rect>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>Copperplate Gothic Light</family>
+                   <pointsize>12</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color: rgb(156, 156, 156);</string>
+                 </property>
+                 <property name="text">
+                  <string>selected player:</string>
+                 </property>
+                </widget>
+                <widget class="QPushButton" name="pushButton_level_up">
+                 <property name="geometry">
+                  <rect>
+                   <x>140</x>
+                   <y>400</y>
+                   <width>281</width>
+                   <height>50</height>
+                  </rect>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>50</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>Copperplate Gothic Light</family>
+                   <pointsize>10</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QPushButton{
+	background-color: rgb(63, 63, 63);
+	color: rgb(156, 156, 156);
+}
+QPushButton:hover{
+	background-color: rgb(156, 156, 156);
+	color: rgb(63, 63, 63);
+}
+</string>
+                 </property>
+                 <property name="text">
+                  <string>level up</string>
+                 </property>
+                </widget>
+                <widget class="QPushButton" name="pushButton_show_stats">
+                 <property name="geometry">
+                  <rect>
+                   <x>140</x>
+                   <y>340</y>
+                   <width>281</width>
+                   <height>50</height>
+                  </rect>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>50</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>Copperplate Gothic Light</family>
+                   <pointsize>10</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QPushButton{
+	background-color: rgb(63, 63, 63);
+	color: rgb(156, 156, 156);
+}
+QPushButton:hover{
+	background-color: rgb(156, 156, 156);
+	color: rgb(63, 63, 63);
+}
+</string>
+                 </property>
+                 <property name="text">
+                  <string>show stats</string>
+                 </property>
+                </widget>
+                <widget class="QLabel" name="label_dices_tools">
+                 <property name="geometry">
+                  <rect>
+                   <x>70</x>
+                   <y>480</y>
+                   <width>411</width>
+                   <height>17</height>
+                  </rect>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>Copperplate Gothic Light</family>
+                   <pointsize>12</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color: rgb(156, 156, 156);</string>
+                 </property>
+                 <property name="text">
+                  <string>Dices tools</string>
+                 </property>
+                </widget>
+                <widget class="QWidget" name="gridLayoutWidget_4">
+                 <property name="geometry">
+                  <rect>
+                   <x>40</x>
+                   <y>500</y>
+                   <width>511</width>
+                   <height>68</height>
+                  </rect>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_2">
+                  <property name="leftMargin">
+                   <number>3</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>3</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>3</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>3</number>
+                  </property>
+                  <property name="horizontalSpacing">
+                   <number>30</number>
+                  </property>
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="label_size">
+                    <property name="font">
+                     <font>
+                      <family>Copperplate Gothic Light</family>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">color: rgb(156, 156, 156);</string>
+                    </property>
+                    <property name="text">
+                     <string>size</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QLineEdit" name="lineEdit_size">
+                    <property name="styleSheet">
+                     <string notr="true">
+color: rgb(156, 156, 156);
+background-color: rgb(63, 63, 63);</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="2">
+                   <widget class="QLabel" name="label_times">
+                    <property name="font">
+                     <font>
+                      <family>Copperplate Gothic Light</family>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">color: rgb(156, 156, 156);</string>
+                    </property>
+                    <property name="text">
+                     <string>times</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="3">
+                   <widget class="QLineEdit" name="lineEdit_times">
+                    <property name="styleSheet">
+                     <string notr="true">color: rgb(156, 156, 156);
+background-color: rgb(63, 63, 63);</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+                <widget class="QPushButton" name="pushButton_throw">
+                 <property name="geometry">
+                  <rect>
+                   <x>140</x>
+                   <y>590</y>
+                   <width>281</width>
+                   <height>50</height>
+                  </rect>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>50</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>Copperplate Gothic Light</family>
+                   <pointsize>10</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QPushButton{
+	background-color: rgb(63, 63, 63);
+	color: rgb(156, 156, 156);
+}
+QPushButton:hover{
+	background-color: rgb(156, 156, 156);
+	color: rgb(63, 63, 63);
+}
+</string>
+                 </property>
+                 <property name="text">
+                  <string>throw</string>
+                 </property>
+                </widget>
+               </widget>
+               <widget class="QWidget" name="page_delete_player">
+                <widget class="QLabel" name="label_delete_player">
+                 <property name="geometry">
+                  <rect>
+                   <x>30</x>
+                   <y>20</y>
+                   <width>291</width>
+                   <height>31</height>
+                  </rect>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>Copperplate Gothic Bold</family>
+                   <pointsize>16</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color: rgb(156, 156, 156);</string>
+                 </property>
+                 <property name="text">
+                  <string>Delete Player</string>
+                 </property>
+                </widget>
+                <widget class="QComboBox" name="comboBox_choose_player">
+                 <property name="geometry">
+                  <rect>
+                   <x>200</x>
+                   <y>160</y>
+                   <width>331</width>
+                   <height>16</height>
+                  </rect>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color: rgb(156, 156, 156);
+background-color: rgb(63, 63, 63);</string>
+                 </property>
+                </widget>
+                <widget class="QLabel" name="label_choose_player">
+                 <property name="geometry">
+                  <rect>
+                   <x>50</x>
+                   <y>160</y>
+                   <width>144</width>
+                   <height>17</height>
+                  </rect>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>Copperplate Gothic Light</family>
+                   <pointsize>12</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color: rgb(156, 156, 156);</string>
+                 </property>
+                 <property name="text">
+                  <string>choose player:</string>
+                 </property>
+                </widget>
+                <widget class="QPushButton" name="pushButton_delete">
+                 <property name="geometry">
+                  <rect>
+                   <x>140</x>
+                   <y>280</y>
+                   <width>281</width>
+                   <height>50</height>
+                  </rect>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>50</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>Copperplate Gothic Light</family>
+                   <pointsize>10</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QPushButton{
+	background-color: rgb(63, 63, 63);
+	color: rgb(156, 156, 156);
+}
+QPushButton:hover{
+	background-color: rgb(156, 156, 156);
+	color: rgb(63, 63, 63);
+}
+</string>
+                 </property>
+                 <property name="text">
+                  <string>Delete</string>
+                 </property>
+                </widget>
+                <widget class="QPushButton" name="pushButton_cancel">
+                 <property name="geometry">
+                  <rect>
+                   <x>110</x>
+                   <y>340</y>
+                   <width>331</width>
+                   <height>50</height>
+                  </rect>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>50</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>Copperplate Gothic Light</family>
+                   <pointsize>10</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QPushButton{
+	background-color: rgb(63, 63, 63);
+	color: rgb(156, 156, 156);
+}
+QPushButton:hover{
+	background-color: rgb(156, 156, 156);
+	color: rgb(63, 63, 63);
+}
+</string>
+                 </property>
+                 <property name="text">
+                  <string>Cancel and go back to Current Adventure</string>
+                 </property>
+                </widget>
+               </widget>
+               <widget class="QWidget" name="page_main">
+                <widget class="QLabel" name="label_main_page_image">
                  <property name="geometry">
                   <rect>
                    <x>70</x>
@@ -1231,20 +1695,20 @@ QPushButton:hover{
              <item>
               <widget class="QLabel" name="label_display">
                <property name="sizePolicy">
-                <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
                  <horstretch>0</horstretch>
                  <verstretch>0</verstretch>
                 </sizepolicy>
                </property>
                <property name="minimumSize">
                 <size>
-                 <width>350</width>
+                 <width>400</width>
                  <height>0</height>
                 </size>
                </property>
                <property name="maximumSize">
                 <size>
-                 <width>350</width>
+                 <width>16777215</width>
                  <height>16777215</height>
                 </size>
                </property>
