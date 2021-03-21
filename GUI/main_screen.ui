@@ -432,7 +432,7 @@ QPushButton:hover{
                 <string notr="true">border-radius:20px;</string>
                </property>
                <property name="currentIndex">
-                <number>5</number>
+                <number>3</number>
                </property>
                <widget class="QWidget" name="page_new_adventure">
                 <widget class="QLabel" name="label_new_adventure">
@@ -1254,9 +1254,9 @@ QPushButton:hover{
                 <widget class="QListWidget" name="listWidget">
                  <property name="geometry">
                   <rect>
-                   <x>50</x>
-                   <y>120</y>
-                   <width>481</width>
+                   <x>20</x>
+                   <y>130</y>
+                   <width>551</width>
                    <height>141</height>
                   </rect>
                  </property>
@@ -1264,7 +1264,18 @@ QPushButton:hover{
                   <string notr="true">QListWidget:hover{
 	background-color: rgb(63, 63, 63);
 	color: rgb(63, 63, 63);
-}</string>
+}
+
+QListWidget{
+	color: rgb(156, 156,156);
+}
+</string>
+                 </property>
+                 <property name="itemAlignment">
+                  <set>Qt::AlignVCenter</set>
+                 </property>
+                 <property name="sortingEnabled">
+                  <bool>true</bool>
                  </property>
                 </widget>
                 <widget class="QLabel" name="label_current_game">
@@ -1330,7 +1341,7 @@ QPushButton:hover{
                   <string notr="true">color: rgb(156, 156, 156);</string>
                  </property>
                  <property name="text">
-                  <string>selected player:</string>
+                  <string/>
                  </property>
                 </widget>
                 <widget class="QPushButton" name="pushButton_level_up">

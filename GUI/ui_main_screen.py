@@ -586,11 +586,18 @@ class Ui_DnD_manager(object):
         self.page_current_adventure.setObjectName(u"page_current_adventure")
         self.listWidget = QListWidget(self.page_current_adventure)
         self.listWidget.setObjectName(u"listWidget")
-        self.listWidget.setGeometry(QRect(50, 120, 481, 141))
+        self.listWidget.setGeometry(QRect(20, 130, 551, 141))
         self.listWidget.setStyleSheet(u"QListWidget:hover{\n"
 "	background-color: rgb(63, 63, 63);\n"
 "	color: rgb(63, 63, 63);\n"
-"}")
+"}\n"
+"\n"
+"QListWidget{\n"
+"	color: rgb(156, 156,156);\n"
+"}\n"
+"")
+        self.listWidget.setItemAlignment(Qt.AlignVCenter)
+        self.listWidget.setSortingEnabled(True)
         self.label_current_game = QLabel(self.page_current_adventure)
         self.label_current_game.setObjectName(u"label_current_game")
         self.label_current_game.setGeometry(QRect(40, 20, 291, 31))
@@ -788,7 +795,7 @@ class Ui_DnD_manager(object):
 
         self.retranslateUi(DnD_manager)
 
-        self.stackedWidget_menus.setCurrentIndex(5)
+        self.stackedWidget_menus.setCurrentIndex(4)
 
 
         QMetaObject.connectSlotsByName(DnD_manager)
@@ -834,7 +841,7 @@ class Ui_DnD_manager(object):
         self.pushButton_add_player_2.setText(QCoreApplication.translate("DnD_manager", u"Back to Adventure menu", None))
         self.label_current_game.setText(QCoreApplication.translate("DnD_manager", u"NO GAME SELECTED", None))
         self.label_player_list.setText(QCoreApplication.translate("DnD_manager", u"Player List", None))
-        self.label_selected_player.setText(QCoreApplication.translate("DnD_manager", u"selected player:", None))
+        self.label_selected_player.setText("")
         self.pushButton_level_up.setText(QCoreApplication.translate("DnD_manager", u"level up", None))
         self.pushButton_show_stats.setText(QCoreApplication.translate("DnD_manager", u"show stats", None))
         self.label_dices_tools.setText(QCoreApplication.translate("DnD_manager", u"Dices tools", None))

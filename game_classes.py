@@ -2,16 +2,16 @@ import pickle
 import character_sheet as cs
 
 
-def save_game(game):
+def save_game(game,path):
 
-    fileObj = open(f"{game.n_adventure}.adv", 'wb')
+    fileObj = open(f"{path}/{game.n_adventure}.adv", 'wb')
     pickle.dump(game,fileObj)
     fileObj.close()
     return
 
 
-def load_game(game_name):
-    game_file = open(f"{game_name}.adv", 'rb')
+def load_game(game_name,path):
+    game_file = open(f"{path}/{game_name}.adv", 'rb')
     game = pickle.load(game_file)
     game_file.close()
     return game
@@ -47,7 +47,8 @@ class game():
 
     def __init__(self):
         self.players = []
-        self.n_adventure = ""
+        self.n_adventure = "NO ADVENTURE SELECTED"
+        self.n_p_add = 0
         self.adventure_name="EMPTY GAME"
         return
 

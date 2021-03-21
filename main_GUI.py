@@ -5,8 +5,9 @@ from GUI.ui_main_screen import Ui_DnD_manager
 
 from GUI.button_setup import button_bind
 
-import os
 import game_classes as Gc
+
+import os
 import sys
 import platform
 from PySide2 import QtCore, QtGui, QtWidgets
@@ -35,6 +36,7 @@ class MainWindow(QMainWindow):
         self.ui.setupUi(self)
         self.ui=button_bind(self)
         
+        self.ui.stackedWidget_menus.setCurrentWidget(self.ui.page_main)
 
         return
 
