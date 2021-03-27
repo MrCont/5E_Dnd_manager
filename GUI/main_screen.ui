@@ -432,7 +432,7 @@ QPushButton:hover{
                 <string notr="true">border-radius:20px;</string>
                </property>
                <property name="currentIndex">
-                <number>3</number>
+                <number>4</number>
                </property>
                <widget class="QWidget" name="page_new_adventure">
                 <widget class="QLabel" name="label_new_adventure">
@@ -753,7 +753,7 @@ QPushButton:hover{
                   <string>still u want to proceed?</string>
                  </property>
                 </widget>
-                <widget class="QPushButton" name="pushButton_No">
+                <widget class="QPushButton" name="pushButton_no">
                  <property name="geometry">
                   <rect>
                    <x>180</x>
@@ -1177,7 +1177,7 @@ QPushButton:hover{
                   <string>Add Player</string>
                  </property>
                 </widget>
-                <widget class="QPushButton" name="pushButton_alternative_add">
+                <widget class="QPushButton" name="pushButton_add_back">
                  <property name="geometry">
                   <rect>
                    <x>130</x>
@@ -1213,7 +1213,7 @@ QPushButton:hover{
                   <string>Add Player and go back to Adventure menu</string>
                  </property>
                 </widget>
-                <widget class="QPushButton" name="pushButton_add_player_2">
+                <widget class="QPushButton" name="pushButton_back_menu">
                  <property name="geometry">
                   <rect>
                    <x>160</x>
@@ -1550,6 +1550,37 @@ QPushButton:hover{
                   <string>throw</string>
                  </property>
                 </widget>
+                <widget class="QLabel" name="label_tips">
+                 <property name="geometry">
+                  <rect>
+                   <x>460</x>
+                   <y>340</y>
+                   <width>151</width>
+                   <height>131</height>
+                  </rect>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>Copperplate Gothic Light</family>
+                   <pointsize>10</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color: rgb(156, 156, 156);</string>
+                 </property>
+                 <property name="text">
+                  <string>tip:
+
+ clicking show stats
+ while a player is selected from player list will display stats starting fom selected player</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="wordWrap">
+                  <bool>true</bool>
+                 </property>
+                </widget>
                </widget>
                <widget class="QWidget" name="page_delete_player">
                 <widget class="QLabel" name="label_delete_player">
@@ -1751,6 +1782,9 @@ border-radius:10px;</string>
                </property>
                <property name="textFormat">
                 <enum>Qt::AutoText</enum>
+               </property>
+               <property name="scaledContents">
+                <bool>true</bool>
                </property>
                <property name="alignment">
                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>

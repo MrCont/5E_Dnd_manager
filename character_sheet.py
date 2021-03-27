@@ -24,7 +24,7 @@ class character_sheet():
 
     def __init__(self,base_choices,stat_choice):
 
-        self.pc_name , self.pc_race , self.pc_class , self.pc_background  = base_choices
+        self.player_name, self.pc_name , self.pc_race , self.pc_class , self.pc_background  = base_choices
         self.lvl=1
         self.hit_dice_number , self.hit_dice_size = self.lvl , 0 
         self.proficiency_bonus = proficiency_func(self.lvl)
@@ -83,11 +83,11 @@ class character_sheet():
         race_mod(self)
         class_mod(self)
         return
-    
+        
 
     def __repr__(self):
         return "\n".join((
-        "character sheet",
+        f"{self.player_name}",
         f"name:{self.pc_name}\t race:{self.pc_race}\t class:{self.pc_class}",
         f"prof_bonus:+{self.proficiency_bonus}",
         f"hp:{self.hp}",
@@ -209,12 +209,22 @@ def race_mod(char_sheet):
 
 classes = ["fighter","rogue"]
 races = ["human","high_elf"]
-    
+alignments = [
+            "Lawful good (LG)",
+            "Neutral good (NG)",
+            "Chaotic good (CG)",
+            "Lawful neutral (LN)",
+            "Neutral (N)",
+            "Chaotic neutral (CN)",
+            "Lawful evil (LE)",
+            "Neutral evil (NE)",
+            "Chaotic evil (CE)"]
 #playground
 if __name__=="__main__":
-    scelte_base = ['gigi','high_elf','rogue','tarallo']
-    array_statistiche = [8,14,13,15,12,10]
-    tizio = character_sheet(scelte_base,array_statistiche)
+    scelta = [['dsflkj g', 'sr', 'fighter', 'high_elf', 'Chaotic good (CG)'], [12, 2, 32, 23, 12, 23]]
+    # scelte_base = ['gigi','high_elf','rogue','tarallo']
+    # array_statistiche = [8,14,13,15,12,10]
+    tizio = character_sheet(scelta[0],scelta[1])
     tizio.export_pdf()
     print("BASE")
     print(tizio)

@@ -3,7 +3,7 @@ from GUI.ui_loading_screen import Ui_Loading_screen
 
 from GUI.ui_main_screen import Ui_DnD_manager
 
-from GUI.button_setup import button_bind
+from button_setup import button_bind
 
 import game_classes as Gc
 

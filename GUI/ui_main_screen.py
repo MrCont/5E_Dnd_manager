@@ -341,12 +341,12 @@ class Ui_DnD_manager(object):
         self.label_warning_2.setGeometry(QRect(200, 220, 221, 16))
         self.label_warning_2.setFont(font2)
         self.label_warning_2.setStyleSheet(u"color: rgb(156, 156, 156);")
-        self.pushButton_No = QPushButton(self.page_delete_adventure)
-        self.pushButton_No.setObjectName(u"pushButton_No")
-        self.pushButton_No.setGeometry(QRect(180, 540, 281, 50))
-        self.pushButton_No.setMinimumSize(QSize(0, 50))
-        self.pushButton_No.setFont(font)
-        self.pushButton_No.setStyleSheet(u"QPushButton{\n"
+        self.pushButton_no = QPushButton(self.page_delete_adventure)
+        self.pushButton_no.setObjectName(u"pushButton_no")
+        self.pushButton_no.setGeometry(QRect(180, 540, 281, 50))
+        self.pushButton_no.setMinimumSize(QSize(0, 50))
+        self.pushButton_no.setFont(font)
+        self.pushButton_no.setStyleSheet(u"QPushButton{\n"
 "	background-color: rgb(63, 63, 63);\n"
 "	color: rgb(156, 156, 156);\n"
 "}\n"
@@ -553,12 +553,12 @@ class Ui_DnD_manager(object):
 "	color: rgb(63, 63, 63);\n"
 "}\n"
 "")
-        self.pushButton_alternative_add = QPushButton(self.page_add_player)
-        self.pushButton_alternative_add.setObjectName(u"pushButton_alternative_add")
-        self.pushButton_alternative_add.setGeometry(QRect(130, 540, 341, 50))
-        self.pushButton_alternative_add.setMinimumSize(QSize(0, 50))
-        self.pushButton_alternative_add.setFont(font)
-        self.pushButton_alternative_add.setStyleSheet(u"QPushButton{\n"
+        self.pushButton_add_back = QPushButton(self.page_add_player)
+        self.pushButton_add_back.setObjectName(u"pushButton_add_back")
+        self.pushButton_add_back.setGeometry(QRect(130, 540, 341, 50))
+        self.pushButton_add_back.setMinimumSize(QSize(0, 50))
+        self.pushButton_add_back.setFont(font)
+        self.pushButton_add_back.setStyleSheet(u"QPushButton{\n"
 "	background-color: rgb(63, 63, 63);\n"
 "	color: rgb(156, 156, 156);\n"
 "}\n"
@@ -567,12 +567,12 @@ class Ui_DnD_manager(object):
 "	color: rgb(63, 63, 63);\n"
 "}\n"
 "")
-        self.pushButton_add_player_2 = QPushButton(self.page_add_player)
-        self.pushButton_add_player_2.setObjectName(u"pushButton_add_player_2")
-        self.pushButton_add_player_2.setGeometry(QRect(160, 600, 281, 50))
-        self.pushButton_add_player_2.setMinimumSize(QSize(0, 50))
-        self.pushButton_add_player_2.setFont(font)
-        self.pushButton_add_player_2.setStyleSheet(u"QPushButton{\n"
+        self.pushButton_back_menu = QPushButton(self.page_add_player)
+        self.pushButton_back_menu.setObjectName(u"pushButton_back_menu")
+        self.pushButton_back_menu.setGeometry(QRect(160, 600, 281, 50))
+        self.pushButton_back_menu.setMinimumSize(QSize(0, 50))
+        self.pushButton_back_menu.setFont(font)
+        self.pushButton_back_menu.setStyleSheet(u"QPushButton{\n"
 "	background-color: rgb(63, 63, 63);\n"
 "	color: rgb(156, 156, 156);\n"
 "}\n"
@@ -699,6 +699,13 @@ class Ui_DnD_manager(object):
 "	color: rgb(63, 63, 63);\n"
 "}\n"
 "")
+        self.label_tips = QLabel(self.page_current_adventure)
+        self.label_tips.setObjectName(u"label_tips")
+        self.label_tips.setGeometry(QRect(460, 340, 151, 131))
+        self.label_tips.setFont(font)
+        self.label_tips.setStyleSheet(u"color: rgb(156, 156, 156);")
+        self.label_tips.setAlignment(Qt.AlignCenter)
+        self.label_tips.setWordWrap(True)
         self.stackedWidget_menus.addWidget(self.page_current_adventure)
         self.page_delete_player = QWidget()
         self.page_delete_player.setObjectName(u"page_delete_player")
@@ -773,6 +780,7 @@ class Ui_DnD_manager(object):
 "border-radius:10px;")
         self.label_display.setLocale(QLocale(QLocale.English, QLocale.UnitedStates))
         self.label_display.setTextFormat(Qt.AutoText)
+        self.label_display.setScaledContents(True)
         self.label_display.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
         self.label_display.setMargin(10)
         self.label_display.setOpenExternalLinks(False)
@@ -822,7 +830,7 @@ class Ui_DnD_manager(object):
         self.label_delete_adventure.setText(QCoreApplication.translate("DnD_manager", u"Delete Adventure", None))
         self.label_warning_1.setText(QCoreApplication.translate("DnD_manager", u"current game and progress will be deleted irreversibly", None))
         self.label_warning_2.setText(QCoreApplication.translate("DnD_manager", u"still u want to proceed?", None))
-        self.pushButton_No.setText(QCoreApplication.translate("DnD_manager", u"No", None))
+        self.pushButton_no.setText(QCoreApplication.translate("DnD_manager", u"No", None))
         self.pushButton_yes.setText(QCoreApplication.translate("DnD_manager", u"Yes", None))
         self.label_add_player.setText(QCoreApplication.translate("DnD_manager", u"Add Player", None))
         self.label_player_name.setText(QCoreApplication.translate("DnD_manager", u"Player Name", None))
@@ -837,8 +845,8 @@ class Ui_DnD_manager(object):
         self.label_constitution.setText(QCoreApplication.translate("DnD_manager", u"Constitution", None))
         self.label_intelligence.setText(QCoreApplication.translate("DnD_manager", u"Intelligence", None))
         self.pushButton_add_player.setText(QCoreApplication.translate("DnD_manager", u"Add Player", None))
-        self.pushButton_alternative_add.setText(QCoreApplication.translate("DnD_manager", u"Add Player and go back to Adventure menu", None))
-        self.pushButton_add_player_2.setText(QCoreApplication.translate("DnD_manager", u"Back to Adventure menu", None))
+        self.pushButton_add_back.setText(QCoreApplication.translate("DnD_manager", u"Add Player and go back to Adventure menu", None))
+        self.pushButton_back_menu.setText(QCoreApplication.translate("DnD_manager", u"Back to Adventure menu", None))
         self.label_current_game.setText(QCoreApplication.translate("DnD_manager", u"NO GAME SELECTED", None))
         self.label_player_list.setText(QCoreApplication.translate("DnD_manager", u"Player List", None))
         self.label_selected_player.setText("")
@@ -848,6 +856,10 @@ class Ui_DnD_manager(object):
         self.label_size.setText(QCoreApplication.translate("DnD_manager", u"size", None))
         self.label_times.setText(QCoreApplication.translate("DnD_manager", u"times", None))
         self.pushButton_throw.setText(QCoreApplication.translate("DnD_manager", u"throw", None))
+        self.label_tips.setText(QCoreApplication.translate("DnD_manager", u"tip:\n"
+"\n"
+" clicking show stats\n"
+" while a player is selected from player list will display stats starting fom selected player", None))
         self.label_delete_player.setText(QCoreApplication.translate("DnD_manager", u"Delete Player", None))
         self.label_choose_player.setText(QCoreApplication.translate("DnD_manager", u"choose player:", None))
         self.pushButton_delete.setText(QCoreApplication.translate("DnD_manager", u"Delete", None))

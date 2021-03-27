@@ -46,8 +46,8 @@ def GUI_add_player(choice,stats):
 class game():
 
     def __init__(self):
+        self.created = 0
         self.players = []
-        self.n_adventure = "NO ADVENTURE SELECTED"
         self.n_p_add = 0
         self.adventure_name="EMPTY GAME"
         return
