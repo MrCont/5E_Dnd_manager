@@ -8,6 +8,7 @@ this list is still far to be completed
  - Python 3+
  - pyside2
  - reportlab
+ - pypdf2
  
 # How to
 at the moment u can try the application by cloning the repo and then running main_GUI.py
