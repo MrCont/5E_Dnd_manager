@@ -9,8 +9,8 @@ this list is still far to be completed
  - pyside2
  - reportlab
  
-
-
+# How to
+at the moment u can try the application by cloning the repo and then running main_GUI.py
 
 # Warning:
 APPLICATION IS STILL IN DEVELOPMENT
